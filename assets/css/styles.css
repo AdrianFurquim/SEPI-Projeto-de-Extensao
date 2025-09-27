@@ -102,7 +102,12 @@ dialog::backdrop{background:rgba(0,0,0,.55)}
 }
 
 /* Footer */
-.footer{max-width:1200px; margin:40px auto 60px; padding:0 16px; color:var(--muted)}
+.footer{
+  max-width:1200px; 
+  margin:40px auto 60px; 
+  padding:0 16px; 
+  color:var(--muted)
+}
 
 /* Forms */
 .input, select, textarea{
@@ -111,3 +116,612 @@ dialog::backdrop{background:rgba(0,0,0,.55)}
 label > small{color:var(--muted)}
 .form-row{display:grid; gap:10px}
 @media (min-width:720px){ .form-row{grid-template-columns:1fr 1fr} }
+
+/* ================================= Contents ================================= */
+
+.content-materials{
+  /* border: white 1px solid; */
+  padding: 0.5em;
+  width: 85%;
+  display: flex;
+  margin: 2em auto auto auto;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.navigate-contents {
+  border: #5066a7 1px solid;
+  background-color: #12151d;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: -1em;
+}
+
+.navigate-contents-links{
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.navigate-contents-links button {
+  appearance: none;
+  background-color:#121722;
+  color: white;
+  border: #5066a7 1px solid;
+  border-radius: 0.4em;
+  padding: 0.85em;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.navigate-contents-links button:hover {
+  padding: 0.95em;
+  font-size: 1em;
+}
+
+.data-contents {
+  border: #5066a7 1px solid;
+  border-radius: 0.5em;
+  width: 95%;
+  padding: 1em;
+}
+
+/* ============================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: hsl(220, 15%, 8%);
+    color: hsl(0, 0%, 95%);
+    line-height: 1.5;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Learning App Layout */
+.learning-app {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    background-color: hsl(220, 20%, 10%);
+    border-right: 1px solid hsl(220, 15%, 20%);
+    padding: 1rem;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.course-header {
+    margin-bottom: 1.5rem;
+}
+
+.course-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.course-icon {
+    background-color: hsl(120, 100%, 40%);
+    border-radius: 4px;
+    padding: 4px;
+    color: white;
+}
+
+.course-details {
+    flex: 1;
+}
+
+.course-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 95%);
+    margin-bottom: 0.25rem;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background-color: hsl(220, 15%, 20%);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: hsl(120, 100%, 40%);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 65%);
+}
+
+/* Sidebar Sections */
+.sidebar-section {
+    margin-bottom: 1rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 65%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.section-header:hover {
+    color: hsl(0, 0%, 95%);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.section-content {
+    margin-left: 0;
+}
+
+.section-content.hidden {
+    display: none;
+}
+
+/* Lesson Card */
+.lesson-card {
+    padding: 0.75rem;
+    background-color: hsl(210, 100%, 56%, 0.1);
+    border-radius: 8px;
+}
+
+.lesson-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.lesson-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(0, 0%, 95%);
+}
+
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lesson-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.lesson-item:hover {
+    background-color: hsl(220, 20%, 15%);
+}
+
+.lesson-item.active {
+    background-color: hsl(210, 100%, 56%, 0.2);
+    color: hsl(210, 100%, 65%);
+}
+
+.play-icon {
+    width: 12px;
+    height: 12px;
+}
+
+.lesson-name {
+    flex: 1;
+    font-size: 0.75rem;
+}
+
+.lesson-duration {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 65%);
+}
+
+.completion-dot {
+    width: 8px;
+    height: 8px;
+    background-color: hsl(120, 100%, 40%);
+    border-radius: 50%;
+}
+
+/* Activity Items */
+.activity-item, .resource-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: hsl(0, 0%, 65%);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem;
+}
+
+.activity-item:hover, .resource-item:hover {
+    color: hsl(0, 0%, 95%);
+    background-color: hsl(220, 20%, 15%);
+}
+
+.activity-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.activity-duration {
+    font-size: 0.75rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: hsl(220, 15%, 12%);
+    overflow-y: auto;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.lesson-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lesson-number {
+    color: hsl(0, 0%, 65%);
+}
+
+.lesson-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 95%);
+}
+
+.next-activity-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: hsl(210, 100%, 56%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.next-activity-btn:hover {
+    background-color: hsl(210, 100%, 50%);
+}
+
+/* Course Banner */
+.course-banner {
+    background-color: hsl(210, 100%, 56%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.course-banner h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Content Cards */
+.content-card {
+    padding: 1.5rem;
+    background-color: hsl(220, 15%, 12%);
+    border: 1px solid hsl(220, 15%, 20%);
+    border-radius: 8px;
+}
+
+.content-point {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.bullet-point {
+    width: 8px;
+    height: 8px;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 50%;
+}
+
+.image-section h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 95%);
+    margin-bottom: 1rem;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+    max-width: 384px;
+}
+
+.grid-cell {
+    width: 48px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.grid-cell.light {
+    background-color: hsl(10, 50%, 60%);
+    color: white;
+}
+
+.grid-cell.medium {
+    background-color: hsl(10, 70%, 50%);
+    color: white;
+}
+
+.grid-cell.dark {
+    background-color: hsl(0, 0%, 20%);
+    color: hsl(10, 50%, 60%);
+}
+
+/* Transcript */
+.transcript-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: hsl(0, 0%, 95%);
+    margin-bottom: 1rem;
+}
+
+.transcript-text {
+    color: hsl(0, 0%, 65%);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Right Content - Video */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.video-player {
+    position: relative;
+    background-color: hsl(0, 0%, 5%);
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    background-color: hsla(0, 0%, 15%, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.play-button:hover {
+    background-color: hsla(0, 0%, 25%, 0.8);
+}
+
+.play-button .play-icon {
+    width: 32px;
+    height: 32px;
+    color: white;
+    margin-left: 4px;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 15%);
+    padding: 1rem;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.control-btn:hover {
+    background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+.video-progress {
+    flex: 1;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    height: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.video-progress-fill {
+    background-color: hsl(210, 100%, 56%);
+    height: 100%;
+    width: 33%;
+    border-radius: 2px;
+}
+
+.time-display {
+    color: white;
+    font-size: 0.875rem;
+}
+
+.speed-btn {
+    background-color: hsla(0, 0%, 100%, 0.1) !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+/* Video Tools */
+.video-tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.tool-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: none;
+    border: 1px solid hsl(220, 15%, 20%);
+    color: hsl(0, 0%, 95%);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+    background-color: hsl(220, 15%, 15%);
+    border-color: hsl(220, 15%, 30%);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .learning-app {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 40vh;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEPI • Conteúdo • Matemática & Física</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand" role="banner" aria-label="EduLab Home">
+      <span class="logo">∑</span>
+      <h1>SEPI</h1>
+      <small>Matemática & Física</small>
+    </div>
+    <nav class="nav" aria-label="principal">
+      <button class="nav__link" data-route="home">Início</button>
+      <button class="nav__link" data-route="courses">Cursos</button>
+      <button class="nav__link" data-route="ebooks">E-books</button>
+      <!-- <button class="nav__link" data-route="my">Meu Aprendizado</button>
+      <button class="nav__link" data-route="admin">Admin</button> -->
+    </nav>
+    <div class="topbar__actions">
+      <input id="searchInput" type="search" placeholder="Buscar cursos e e‑books…" aria-label="Buscar" />
+      <!-- <button id="btnDark" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌓</button>
+      <button id="btnLogin" class="btn btn--primary">Entrar</button> -->
+    </div>
+  </header>
+
+  <div class="learning-app">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Course Header -->
+            <div class="course-header">
+                <div class="course-info">
+                    <div class="course-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="12" cy="12" r="8"/>
+                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+                        </svg>
+                    </div>
+                    <div class="course-details">
+                        <h2>Fisioterapia </h2>
+                        <!-- <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%"></div>
+                            </div>
+                            <span class="progress-text">25%</span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Lesson Section -->
+            <div class="sidebar-section">
+                <button class="section-header" onclick="toggleSection('aula-atual')">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 6h20v12H2z"/>
+                            <path d="M2 6l10 6 10-6"/>
+                        </svg>
+                        Matemática
+                    </div>
+                    <svg class="chevron" id="chevron-aula-atual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6,9 12,15 18,9"/>
+                    </svg>
+                </button>
+                <div class="section-content" id="aula-atual">
+                    <div class="lesson-card">
+                        <div class="lesson-header">
+                            <span class="lesson-title">Matemática</span>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
+                        </div>
+                        <div class="lessons-list">
+                            <div class="lesson-item active">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                                <span class="lesson-name">Geometria e ângulos articulares</span>
+                                <!-- <span class="lesson-duration">12min</span> -->
+                                <div class="completion-dot"></div>
+                            </div>
+                            <div class="lesson-item">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                                <span class="lesson-name">Análise de forças</span>
+                                <!-- <span class="lesson-duration">9min</span> -->
+                            </div>
+                            <div class="lesson-item">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                                <span class="lesson-name">Dosagem de medicamentos</span>
+                                <!-- <span class="lesson-duration">16min</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activities Section -->
+            <div class="sidebar-section">
+                <button class="section-header" onclick="toggleSection('atividades')">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                        </svg>
+                        Física
+                    </div>
+                    <svg class="chevron" id="chevron-atividades" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"/>
+                    </svg>
+                </button>
+                <div class="section-content hidden" id="atividades">
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            <span>Mecânica</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            <span>Biomecânica</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            <span>Termoterapia e crioterapia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="sidebar-section">
+                <button class="section-header" onclick="toggleSection('recursos')">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="12" cy="1" r="1"/>
+                            <circle cx="12" cy="23" r="1"/>
+                            <circle cx="20" cy="12" r="1"/>
+                            <circle cx="4" cy="12" r="1"/>
+                            <circle cx="18.5" cy="5.5" r="1"/>
+                            <circle cx="5.5" cy="18.5" r="1"/>
+                            <circle cx="18.5" cy="18.5" r="1"/>
+                            <circle cx="5.5" cy="5.5" r="1"/>
+                        </svg>
+                        RECURSOS
+                    </div>
+                    <svg class="chevron" id="chevron-recursos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"/>
+                    </svg>
+                </button>
+                <div class="section-content hidden" id="recursos">
+                    <div class="resource-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2Z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                        <span>Para saber mais</span>
+                    </div>
+                    <div class="resource-item">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
+                            <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
+                        </svg>
+                        <span>O que aprendemos?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Content Header -->
+            <div class="content-header">
+                <div class="lesson-info">
+                    <span class="lesson-number">01</span>
+                    <h1 class="lesson-title">Definição</h1>
+                </div>
+                <button class="next-activity-btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                    PRÓXIMA ATIVIDADE
+                </button>
+            </div>
+
+            <!-- Course Header -->
+            <div class="course-banner">
+                <h2>Convolução 2D</h2>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="content-grid">
+                <!-- Left Content -->
+                <div class="left-content">
+                    <!-- Lesson Content -->
+                    <div class="content-card">
+                        <div class="content-point">
+                            <div class="bullet-point"></div>
+                            <span>O kernel se desloca em duas dimensões</span>
+                        </div>
+                        
+                        <div class="image-section">
+                            <h3>Imagem</h3>
+                            <div class="video-grid">
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                                <div class="grid-cell light">90</div>
+                                <div class="grid-cell light">85</div>
+                                <div class="grid-cell light">80</div>
+                                <div class="grid-cell medium">20</div>
+                                <div class="grid-cell medium">15</div>
+                                <div class="grid-cell medium">10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transcript Section -->
+                    <div class="content-card">
+                        <h3 class="transcript-title">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2Z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                            Transcrição
+                        </h3>
+                        <p class="transcript-text">
+                            [00:00] Agora nós vamos falar da convolução no contexto dessa curso que é o contexto de imagens, vamos usar a convolução 2D, ou seja, 
+                            que consegue se movimentar tanto na horizontal quanto na vertical...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Content - Video -->
+                <div class="right-content">
+                    <div class="video-player">
+                        <div class="video-overlay">
+                            <div class="play-button">
+                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="5,3 19,12 5,21"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-controls">
+                            <div class="controls-row">
+                                <button class="control-btn">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="5,3 19,12 5,21"/>
+                                    </svg>
+                                </button>
+                                <div class="progress-container">
+                                    <div class="video-progress">
+                                        <div class="video-progress-fill"></div>
+                                    </div>
+                                </div>
+                                <span class="time-display">0:39 / 11:21</span>
+                                <button class="control-btn speed-btn">2x</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Tools -->
+                    <div class="video-tools">
+                        <button class="tool-btn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="6" height="6"/>
+                                <rect x="15" y="3" width="6" height="6"/>
+                                <rect x="3" y="15" width="6" height="6"/>
+                                <rect x="15" y="15" width="6" height="6"/>
+                            </svg>
+                            Filtros
+                        </button>
+                        <button class="tool-btn">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            Atividade
+                        </button>
+                    </div>
+                </div>
+            </div>
+          </main>
+          
+    <!-- <footer class="footer">
+      <p>© <span id="year"></span> SEPI. Feito com HTML, CSS e JavaScript puro.</p>
+    </footer> -->
+
+
+  <dialog id="videoDialog" class="wide-dialog">
+    <form method="dialog" class="dialog__content">
+      <h3 id="videoTitle">Aula</h3>
+      <div class="video-wrap">
+        <video id="videoPlayer" controls playsinline>
+          <!-- Você pode substituir o src por um arquivo local .mp4 ou um link direto -->
+          <source id="videoSrc" src="" type="video/mp4" />
+          Seu navegador não suporta vídeo HTML5.
+        </video>
+      </div>
+      <menu class="dialog__menu">
+        <button value="close" class="btn btn--primary">Fechar</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="./assets/js/app.js"></script>
+  <script>
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId);
+            const chevron = document.getElementById('chevron-' + sectionId);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                chevron.style.transform = 'rotate(90deg)';
+            } else {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Initialize first section as open
+        document.addEventListener('DOMContentLoaded', function() {
+            const chevronAulaAtual = document.getElementById('chevron-aula-atual');
+            chevronAulaAtual.style.transform = 'rotate(90deg)';
+        });
+    </script>
+</body>
+</html>

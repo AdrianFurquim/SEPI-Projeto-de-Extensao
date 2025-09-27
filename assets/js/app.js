@@ -140,27 +140,27 @@ function bindGlobalUI(){
     refresh();
   });
 
-  // Tema
-  $("#btnDark").addEventListener("click", () => {
-    const r = document.documentElement;
-    const light = r.classList.toggle("light");
-    localStorage.setItem("edulab_theme", light? "light":"dark");
-  });
-  const remembered = localStorage.getItem("edulab_theme");
-  if(remembered === "light"){ document.documentElement.classList.add("light"); }
+  // // Tema
+  // $("#btnDark").addEventListener("click", () => {
+  //   const r = document.documentElement;
+  //   const light = r.classList.toggle("light");
+  //   localStorage.setItem("edulab_theme", light? "light":"dark");
+  // });
+  // const remembered = localStorage.getItem("edulab_theme");
+  // if(remembered === "light"){ document.documentElement.classList.add("light"); }
 
-  // Login
-  $("#btnLogin").addEventListener("click", openLogin);
-  $("#doLogin").addEventListener("click", () => {
-    const name = $("#loginName").value.trim();
-    if(name){
-      state.user = { name };
-      localStorage.setItem("edulab_user", JSON.stringify(state.user));
-      $("#loginDialog").close();
-      notify(`Olá, ${name}!`);
-      refresh();
-    }
-  });
+  // // Login
+  // $("#btnLogin").addEventListener("click", openLogin);
+  // $("#doLogin").addEventListener("click", () => {
+  //   const name = $("#loginName").value.trim();
+  //   if(name){
+  //     state.user = { name };
+  //     localStorage.setItem("edulab_user", JSON.stringify(state.user));
+  //     $("#loginDialog").close();
+  //     notify(`Olá, ${name}!`);
+  //     refresh();
+  //   }
+  // });
 }
 
 function openLogin(){
@@ -243,7 +243,7 @@ function renderHome(root, courses, ebooks){
   sec.innerHTML = `
     <div class="hero card" style="padding:18px 18px 4px;">
       <div class="card__body">
-        <h2 style="margin:.2rem 0 0;">Bem-vindo${state.user? ', '+state.user.name:''} 👋</h2>
+        <h2 style="margin:.2rem 0 0;">Bem-vindo 👋</h2>
         <p class="card__desc">Estude Matemática e Física em cursos práticos e e‑books concisos. Progrida no seu ritmo, com seu avanço salvo no navegador.</p>
         <div class="chips" style="margin-top:6px">
           <span class="chip">HTML • CSS • JS puro</span>
