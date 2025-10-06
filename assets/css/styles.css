@@ -232,22 +232,43 @@ label > small{color:var(--muted)}
     box-sizing: border-box;
 }
 
+/* === Força o uso das variáveis do tema === */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: hsl(0, 0%, 84%);
-    color: hsl(0, 0%, 0%);
-    line-height: 1.5;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
 }
 
-.icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
+.sidebar {
+  background-color: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border-right-color: var(--stroke) !important;
 }
 
-.hidden {
-    display: none !important;
+.main-content {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
 }
+
+.content-card,
+.lesson-card,
+.activity-item,
+.resource-item {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border-color: var(--stroke) !important;
+}
+
+/* Links e botões também adaptam */
+a, button {
+  color: var(--text);
+}
+
+.nav__link:hover,
+.icon-btn:hover {
+  background-color: var(--bg-soft);
+  color: var(--text);
+}
+
 
 /* Learning App Layout */
 .learning-app {
@@ -782,4 +803,18 @@ body {
         align-items: flex-start;
         gap: 1rem;
     }
+}
+/* Transição suave do tema (cores) */
+html, body {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Animação do ícone do botão */
+#themeIcon {
+  display: inline-block;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+.theme-rotating {
+  transform: rotate(180deg);
 }

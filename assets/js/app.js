@@ -139,6 +139,52 @@ function bindGlobalUI(){
     state.query = e.target.value.trim().toLowerCase();
     refresh();
   });
+  
+
+// ---------- Tema (Dark Mode) ----------
+(() => {
+  const btn = $("#btnDark");
+  const icon = $("#themeIcon");
+  const html = document.documentElement;
+  if (!btn) {
+    console.warn("[Tema] #btnDark não encontrado. Verifique o HTML/ID.");
+    return;
+  }
+
+  // Respeita preferência do sistema se o usuário ainda não salvou
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem("edulab_theme"); // chave usada no seu projeto
+
+  // Define o tema inicial: preferido pelo usuário (se salvo) ou pelo sistema
+  const initial = saved || (prefersDark ? "dark" : "light");
+
+  function applyTheme(mode) {
+    if (mode === "dark") html.classList.add("dark");
+    else html.classList.remove("dark");
+
+    const isDark = html.classList.contains("dark");
+    if (icon) icon.textContent = isDark ? "☀️" : "🌙";
+    btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    btn.setAttribute("aria-label", isDark ? "Desativar modo escuro" : "Ativar modo escuro");
+    localStorage.setItem("edulab_theme", isDark ? "dark" : "light");
+  }
+
+  // Aplica tema inicial
+  applyTheme(initial);
+
+  // Alterna tema ao clicar (com animação do ícone)
+  btn.addEventListener("click", () => {
+    // anima o ícone (classe temporária)
+    if (icon) {
+      icon.classList.add("theme-rotating");
+      setTimeout(() => icon.classList.remove("theme-rotating"), 360);
+    }
+
+    html.classList.toggle("dark");
+    applyTheme(html.classList.contains("dark") ? "dark" : "light");
+  });
+})();
+
 
   // // Tema
   // $("#btnDark").addEventListener("click", () => {
