@@ -818,3 +818,118 @@ html, body {
 .theme-rotating {
   transform: rotate(180deg);
 }
+
+/* ========== DARK MODE ========== */
+:root.dark {
+  --bg: #0f2011;
+  --bg-soft: #1a2e1b;
+  --text: #ffffff;
+  --muted: #88a389;
+  --brand: #8bff7c;
+  --brand-2: #9d72ff;
+  --card: #233626;
+  --stroke: #3a5244;
+  --ok: #2ecc71;
+  --warn: #f39c12;
+  --danger: #e74c3c;
+  --shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Aplica o tema escuro ao body */
+body {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Corrige elementos com cores fixas */
+.topbar {
+  background: var(--bg-soft) !important;
+  border-bottom-color: var(--stroke) !important;
+}
+
+.card {
+  background: var(--card) !important;
+}
+
+/* Corrige cores específicas que estavam fixas */
+.brand small {
+  color: var(--muted) !important;
+}
+
+.chip {
+  background: var(--bg-soft) !important;
+  border-color: var(--stroke) !important;
+  color: var(--text) !important;
+}
+
+.input, select, textarea {
+  background: var(--bg-soft) !important;
+  border-color: var(--stroke) !important;
+  color: var(--text) !important;
+}
+
+/* Corrige o conteúdo dos materiais */
+.content-materials {
+  background: transparent !important;
+}
+
+.navigate-contents {
+  background-color: var(--card) !important;
+  border-color: var(--stroke) !important;
+}
+
+.navigate-contents-links button {
+  background-color: var(--bg-soft) !important;
+  border-color: var(--stroke) !important;
+  color: var(--text) !important;
+}
+
+.data-contents {
+  background-color: var(--card) !important;
+  border-color: var(--stroke) !important;
+  color: var(--text) !important;
+}
+
+/* Learning app corrections */
+.sidebar {
+  background-color: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border-right-color: var(--stroke) !important;
+}
+
+.main-content {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+.lesson-card {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+}
+
+.activity-item, .resource-item {
+  background-color: var(--bg-soft) !important;
+  color: var(--text) !important;
+  border-color: var(--stroke) !important;
+}
+
+.content-card {
+  background-color: var(--card) !important;
+  color: var(--text) !important;
+  border-color: var(--stroke) !important;
+}
+
+/* Remove cores fixas do content-card */
+.content-card span {
+  color: var(--text) !important;
+}
+
+.course-title, .progress-text, .section-header, .lesson-title {
+  color: var(--text) !important;
+}
+
+/* Garante que todos os textos usem a variável */
+* {
+  color: var(--text);
+}
