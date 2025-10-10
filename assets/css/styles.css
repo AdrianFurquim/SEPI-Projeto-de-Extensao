@@ -141,6 +141,19 @@ body{
 .progress{height:8px; background:#203a20; border-radius:999px; overflow:hidden}
 .progress__bar{height:100%; background:linear-gradient(135deg, var(--brand), var(--brand-2)); width:0%}
 
+.card__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.card__desc {
+  font-size: 1.1rem;
+  color: var(--text-muted, #555);
+  margin-bottom: 2rem;
+}
+
 /* Dialogs */
 dialog{border:1px solid var(--stroke); border-radius:16px; background:var(--bg-soft); color:var(--text); box-shadow:var(--shadow); max-width:min(880px, 96vw)}
 dialog::backdrop{background:rgba(0,0,0,.55)}

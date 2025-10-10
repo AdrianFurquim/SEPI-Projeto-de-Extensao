@@ -287,17 +287,17 @@ function chip(key, label, active, onClick){
 function renderHome(root, courses, ebooks){
   const sec = el("section","section");
   sec.innerHTML = `
-    <div class="hero card" style="padding:18px 18px 4px;">
-      <div class="card__body">
-        <h2 style="margin:.2rem 0 0;">Bem-vindo 👋</h2>
-        <p class="card__desc">Estude Matemática e Física em cursos práticos e e‑books concisos. Progrida no seu ritmo, com seu avanço salvo no navegador.</p>
-        <div class="chips" style="margin-top:6px">
-          <span class="chip">HTML • CSS • JS puro</span>
-          <span class="chip">LocalStorage</span>
-          <span class="chip">Responsivo</span>
+      <div class="hero card" style="padding:18px 18px 4px;">
+        <div class="card__body">
+          <h2 style="margin:.2rem 0 0;">Semeando Educação Para Inovação</h2>
+          <p class="card__desc">Esse site tem como objetivo auxiliar os alunos da Escola Municipal Celina Schechner a compreenderem profundamente conceitos de matemática e física através de aulas focadas em ensino prático e técnico, ligando as ideias à vida cotidiana e demonstrando suas aplicações práticas em diversas profissões. Progrida no seu ritmo, com seu avanço salvo no navegador.</p>
+          <div class="chips" style="margin-top:6px">
+            <span class="chip">HTML • CSS • JS puro</span>
+            <span class="chip">LocalStorage</span>
+            <span class="chip">Responsivo</span>
+          </div>
         </div>
       </div>
-    </div>
   `;
   root.append(sec);
 
