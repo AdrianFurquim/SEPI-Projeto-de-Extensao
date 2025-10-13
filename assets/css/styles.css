@@ -1,13 +1,16 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 /* Reset & base */
 *{box-sizing:border-box}
 :root{
-  --bg: #ffffff;
-  --bg-soft:#ffffff;
+  --bg: #f2f3ee;
+  --bg-soft:#f9faf5;
   --text:#000000;
   --muted:#a7c3a8;
   --brand:#8bff7c;
   --brand-2:#9d72ff;
-  --card:#b9e7bc;
+  --card:#dad7cd;
   --stroke:#233626;
   --ok:#2ecc71;
   --warn:#f39c12;
@@ -86,13 +89,20 @@ body{
     background:var(--bg-soft); 
     color:var(--text); 
     padding:10px 14px; 
+    margin: 3px;
     border-radius:10px; 
     cursor:pointer}
 
 .btn--primary{
-    background:#3CB170; 
+    background:#2f6338; 
     border:none; 
+    transition: all 0.3s ease;
     color:white}
+
+.btn--primary:hover {
+  background: #224729;
+  transform: translateY(-2px)
+}
 
 /* Layout */
 #app{max-width:1200px; margin:24px auto; padding:0 16px}
@@ -122,7 +132,7 @@ body{
 .card__thumb{
     position:relative; 
     aspect-ratio:16/9; 
-    background:#3e8a42; 
+    background:#2f6338; 
     display:grid; 
     place-items:center; 
     font-weight:700; 
@@ -134,7 +144,7 @@ body{
 }
 .badge{position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.45); border:1px solid var(--stroke); color:#fff; font-size:12px}
 .card__body{padding:14px; display:flex; flex-direction:column; gap:10px; flex:1}
-.card__title{margin:0; font-size:16px}
+.card__title{margin:0; font-size:19px; font-family: lato;}
 .card__desc{margin:0; color:var(--muted)}
 .card__meta{display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:12px}
 .card__actions{margin-top:auto; display:flex; gap:8px; justify-content:space-between; align-items:center; padding:12px 14px; border-top:1px solid var(--stroke)}
@@ -145,7 +155,7 @@ body{
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .card__desc {
@@ -171,9 +181,10 @@ dialog::backdrop{background:rgba(0,0,0,.55)}
 
 /* Footer */
 .footer{
+  text-align: center;
   max-width:1200px; 
   margin:40px auto 60px; 
-  padding:0 16px; 
+  padding:10px; 
   color:var(--muted)
 }
 
@@ -834,18 +845,43 @@ html, body {
 
 /* ========== DARK MODE ========== */
 :root.dark {
-  --bg: #0f2011;
-  --bg-soft: #1a2e1b;
-  --text: #ffffff;
+  --bg: #030502;
+  --bg-soft: #030502;
+  --text: #ffffff; 
   --muted: #88a389;
   --brand: #8bff7c;
   --brand-2: #9d72ff;
-  --card: #233626;
+  --card: #131811;
   --stroke: #3a5244;
   --ok: #2ecc71;
   --warn: #f39c12;
   --danger: #e74c3c;
   --shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+:root.dark .card__desc {
+  color: #ccd1cb;
+}
+
+:root.dark .btn--primary{
+    background:#2f683a; 
+    border:none; 
+    transition: all 0.3s ease;
+    color:white}
+
+:root.dark .btn--primary:hover {
+  background: #224227;
+  transform: translateY(-2px)
+}
+
+:root.dark .card__thumb{
+    position:relative; 
+    aspect-ratio:16/9; 
+    background:#0d2712; 
+    display:grid; 
+    place-items:center; 
+    font-weight:700; 
+    color:#acffa9;
 }
 
 /* Aplica o tema escuro ao body */

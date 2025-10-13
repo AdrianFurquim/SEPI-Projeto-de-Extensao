@@ -289,13 +289,8 @@ function renderHome(root, courses, ebooks){
   sec.innerHTML = `
       <div class="hero card" style="padding:18px 18px 4px;">
         <div class="card__body">
-          <h2 style="margin:.2rem 0 0;">Semeando Educação Para Inovação</h2>
+          <h2 style="margin:.2rem 0 0; font-family: lato; font-size:2rem">Semeando Educação Para Inovação</h2>
           <p class="card__desc">Esse site tem como objetivo auxiliar os alunos da Escola Municipal Celina Schechner a compreenderem profundamente conceitos de matemática e física através de aulas focadas em ensino prático e técnico, ligando as ideias à vida cotidiana e demonstrando suas aplicações práticas em diversas profissões. Progrida no seu ritmo, com seu avanço salvo no navegador.</p>
-          <div class="chips" style="margin-top:6px">
-            <span class="chip">HTML • CSS • JS puro</span>
-            <span class="chip">LocalStorage</span>
-            <span class="chip">Responsivo</span>
-          </div>
         </div>
       </div>
   `;
@@ -309,7 +304,7 @@ function renderHome(root, courses, ebooks){
   courses.slice(0,6).forEach(c => grid.append(cardCourse(c)));
   ebooks.slice(0,6).forEach(e => grid.append(cardEbook(e)));
 
-  sec2.append(head("Destaques"), filters, grid);
+  sec2.append(head("Cursos"), filters, grid);
   root.append(sec2);
 }
 
@@ -664,7 +659,7 @@ function openChapter(ebook, chapter){
 // ---------- Componentes ----------
 function head(title){
   const h = el("div","section__head");
-  h.innerHTML = `<h2 style="margin:0">${title}</h2>`;
+  h.innerHTML = `<h2 style="font-size: 1.7rem; padding-top:15px; font-family:lato;">${title}</h2>`;
   return h;
 }
 function subtitle(t){ const s = document.createElement("h3"); s.textContent = t; return s; }
