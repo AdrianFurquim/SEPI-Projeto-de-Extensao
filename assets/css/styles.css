@@ -371,6 +371,11 @@ body {
 /* Lesson Card */
 .lesson-card {
     padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.active-lesson-card {
+    padding: 0.75rem;
     background-color: hsla(108, 93%, 53%, 0.205);
     border-radius: 8px;
 }
@@ -635,6 +640,9 @@ body {
     border-radius: 8px;
     overflow: hidden;
     aspect-ratio: 16/9;
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
 }
 
 .video-overlay {
@@ -642,6 +650,11 @@ body {
     inset: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.video-credit{
+    display: flex;
     justify-content: center;
 }
 
@@ -750,6 +763,31 @@ body {
     background-color: hsl(220, 15%, 15%);
     border-color: hsl(220, 15%, 30%);
 }
+
+.transcript-figure {
+  display: block; /* ou inline-block se quiser no fluxo do parágrafo */
+  margin: 0.6em 0;
+  text-align: center; /* centraliza imagem e legenda */
+}
+.transcript-image {
+  display: block;
+  max-width: 60%;
+  height: auto;
+  margin: 0 auto;
+}
+.transcript-caption {
+  font-size: 0.85em;
+  color: #666;
+  margin-top: 0.25em;
+}
+
+.transcript-text img { 
+    display:flex; 
+    justify-content: center;
+    margin: auto; 
+    padding: 1em;
+    border-radius: 1.5em;
+} 
 
 /* Responsive Design */
 @media (max-width: 1024px) {

@@ -44,7 +44,7 @@
                         </svg>
                     </div>
                     <div class="course-details">
-                        <h2>Fisioterapia </h2>
+                        <h2 class="title-matetial"> </h2>
                         <!-- <div class="progress-container">
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 25%"></div>
@@ -55,9 +55,9 @@
                 </div>
             </div>
 
-            <!-- Current Lesson Section -->
+            <!-- Conteúdos de Matemática -->
             <div class="sidebar-section">
-                <button class="section-header" onclick="toggleSection('aula-atual')">
+                <button class="section-header" onclick="toggleSection('aula-atual', 'matematica')">
                     <div class="section-title">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M2 6h20v12H2z"/>
@@ -66,48 +66,40 @@
                         Matemática
                     </div>
                     <svg class="chevron" id="chevron-aula-atual" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="6,9 12,15 18,9"/>
+                        <polyline points="9,18 15,12 9,6"/>
                     </svg>
                 </button>
-                <div class="section-content" id="aula-atual">
-                    <div class="lesson-card">
-                        <div class="lesson-header">
-                            <span class="lesson-title">Matemática</span>
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"/>
+                <div class="lesson-card lesson-car-mat hidden" id="aula-atual">
+                    <div class="lessons-list">
+                        <!-- <div class="lesson-item active">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21"/>
                             </svg>
+                            <span class="lesson-name">Geometria e ângulos articulares</span>
+                            <span class="lesson-duration">12min</span>
+                            <div class="completion-dot"></div>
                         </div>
-                        <div class="lessons-list">
-                            <div class="lesson-item active">
-                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                                <span class="lesson-name">Geometria e ângulos articulares</span>
-                                <!-- <span class="lesson-duration">12min</span> -->
-                                <div class="completion-dot"></div>
-                            </div>
-                            <div class="lesson-item">
-                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                                <span class="lesson-name">Análise de forças</span>
-                                <!-- <span class="lesson-duration">9min</span> -->
-                            </div>
-                            <div class="lesson-item">
-                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                                <span class="lesson-name">Dosagem de medicamentos</span>
-                                <!-- <span class="lesson-duration">16min</span> -->
-                            </div>
+                        <div class="lesson-item">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                            <span class="lesson-name">Análise de forças</span>
+                            <span class="lesson-duration">9min</span>
                         </div>
+                        <div class="lesson-item">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21"/>
+                            </svg>
+                            <span class="lesson-name">Dosagem de medicamentos</span>
+                            <span class="lesson-duration">16min</span>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <!-- Activities Section -->
+            <!-- Conteúdos de Física -->
             <div class="sidebar-section">
-                <button class="section-header" onclick="toggleSection('atividades')">
+                <button class="section-header" onclick="toggleSection('atividades', 'fisica')">
                     <div class="section-title">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
@@ -118,8 +110,8 @@
                         <polyline points="9,18 15,12 9,6"/>
                     </svg>
                 </button>
-                <div class="section-content hidden" id="atividades">
-                    <div class="activity-item">
+                <div class="lesson-card lesson-car-fis lessons-list-fisica hidden" id="atividades">
+                    <!-- <div class="activity-item">
                         <div class="activity-info">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
@@ -142,7 +134,7 @@
                             </svg>
                             <span>Termoterapia e crioterapia</span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -210,8 +202,8 @@
             </div>
 
             <!-- Course Header -->
-            <div class="course-banner">
-                <h2>Convolução 2D</h2>
+            <div class="course-banner" onclick="">
+                <h2 class="couse-banner-title">Aqui você pode ver sobre seu curso Preferido!</h2>
             </div>
 
             <!-- Main Grid -->
@@ -219,54 +211,13 @@
                 <!-- Left Content -->
                 <div class="left-content">
                     <!-- Lesson Content -->
-                    <div class="content-card">
+                    <!-- <div class="content-card content-card-text">
                         <div class="content-point">
                             <div class="bullet-point"></div>
                             <span>O kernel se desloca em duas dimensões</span>
                         </div>
                         
-                        <div class="image-section">
-                            <h3>Imagem</h3>
-                            <div class="video-grid">
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                                <div class="grid-cell light">90</div>
-                                <div class="grid-cell light">85</div>
-                                <div class="grid-cell light">80</div>
-                                <div class="grid-cell medium">20</div>
-                                <div class="grid-cell medium">15</div>
-                                <div class="grid-cell medium">10</div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
 
                     <!-- Transcript Section -->
                     <div class="content-card">
@@ -278,45 +229,27 @@
                                 <line x1="16" y1="17" x2="8" y2="17"/>
                                 <polyline points="10,9 9,9 8,9"/>
                             </svg>
-                            Transcrição
+                            Venha aprender conosco!
                         </h3>
                         <p class="transcript-text">
-                            [00:00] Agora nós vamos falar da convolução no contexto dessa curso que é o contexto de imagens, vamos usar a convolução 2D, ou seja, 
-                            que consegue se movimentar tanto na horizontal quanto na vertical...
+                            Junte-se a nós e transforme conhecimento em prática. Explore Matemática ou Física e aprenda a usar esses saberes no seu dia a dia profissional.
                         </p>
                     </div>
                 </div>
 
                 <!-- Right Content - Video -->
                 <div class="right-content">
-                    <div class="video-player">
-                        <div class="video-overlay">
-                            <div class="play-button">
-                                <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="5,3 19,12 5,21"/>
-                                </svg>
-                            </div>
+                        <!-- <div class="video-player">
+                            <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/VQVpG5qTRlk" 
+                                title="YouTube video player" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
-                        <div class="video-controls">
-                            <div class="controls-row">
-                                <button class="control-btn">
-                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polygon points="5,3 19,12 5,21"/>
-                                    </svg>
-                                </button>
-                                <div class="progress-container">
-                                    <div class="video-progress">
-                                        <div class="video-progress-fill"></div>
-                                    </div>
-                                </div>
-                                <span class="time-display">0:39 / 11:21</span>
-                                <button class="control-btn speed-btn">2x</button>
-                            </div>
-                        </div>
-                    </div>
+                        <p>Autor</p> -->
                     
                     <!-- Video Tools -->
-                    <div class="video-tools">
+                    <!-- <div class="video-tools">
                         <button class="tool-btn">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="3" width="6" height="6"/>
@@ -332,7 +265,7 @@
                             </svg>
                             Atividade
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
           </main>
@@ -359,11 +292,28 @@
   </dialog>
 
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/contents.js"></script>
   <script>
-        function toggleSection(sectionId) {
+        function toggleSection(sectionId, material) {
             const content = document.getElementById(sectionId);
             const chevron = document.getElementById('chevron-' + sectionId);
-            
+            //console.log("Foi")
+
+            let lessonCardMat = document.querySelector(".lesson-car-mat")
+            let lessonCardFis = document.querySelector(".lesson-car-fis")
+
+            if(lessonCardMat.classList.contains("active-lesson-card") && lessonCardMat.classList.contains("lesson-car-mat") && material == "matematica"){
+                lessonCardMat.classList.remove("active-lesson-card")
+            } else if(material == "matematica"){
+                lessonCardMat.classList.add("active-lesson-card")
+            }
+
+            if(lessonCardFis.classList.contains("active-lesson-card") && lessonCardFis.classList.contains("lesson-car-fis") && material == "fisica"){
+                lessonCardFis.classList.remove("active-lesson-card")
+            } else if(material == "fisica"){
+                lessonCardFis.classList.add("active-lesson-card")
+            }
+
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
                 chevron.style.transform = 'rotate(90deg)';
@@ -375,8 +325,8 @@
 
         // Initialize first section as open
         document.addEventListener('DOMContentLoaded', function() {
-            const chevronAulaAtual = document.getElementById('chevron-aula-atual');
-            chevronAulaAtual.style.transform = 'rotate(90deg)';
+            // const chevronAulaAtual = document.getElementById('chevron-aula-atual');
+            // chevronAulaAtual.style.transform = 'rotate(90deg)';
         });
     </script>
 </body>
