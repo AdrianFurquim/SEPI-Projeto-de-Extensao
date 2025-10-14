@@ -1,0 +1,144 @@
+[
+  {
+    "id": "fisioterapia",
+    "name": "Fisioterapia",
+    "image": "",
+    "materials": {
+      "matematica": {
+        "geometriaeangulorarticurares": {
+          "idMat": "geometriaeangulorarticurares",
+          "name": "Geometria e ângulos articulares", 
+          "videos": [
+            "Abc da Anatomia|||https://youtu.be/OiiFQB82nkk?si=VY7qgz28CJZJBEsZ",
+            "José Góes|||https://youtu.be/1qgS0jE-0g4?si=yfY99qhYUQgC8cKW"
+          ],
+          "textos": [
+            "Título1|||A Fotogrametria digital, segundo Atkinson (1996), Patias (2002) e Mitchel e Newton (2002), tem sido bem recebida na área médica.\n\nNesses últimos anos, a tecnologia digital tornou-se popular no Brasil.\nA fotografia digital, com excelência na qualidade das fotos e custo acessível, mostrou-se um instrumento em potencial para a avaliação fisioterapêutica.\n\nNeste estudo, em especial, para medir amplitudes de movimento do corpo humano.\nO interesse da metodologia aqui desenvolvida para medir angulações no corpo humano surgiu da dificuldade da utilização do goniômetro convencional em determinadas articulações.\n\nO estudo desse método é interessante, na medida em que proporciona feedback visual ao paciente, evidenciando a evolução do tratamento.\nA escolha deste método ocorreu no trabalho de Denise Ricieri, encontrado em http://www.inspirar.com.br/img_insp/359,20,Identificação de Padrões Respiratórios através da Fotogrametria Computadorizada.\n\nNo modelo mecânico do corpo humano, segundo Konno e Mead (1967), possui-se um duplo compartimento para a parede torácica (CHEST WALL) e Tórax + Abdome.\nPara Ward et al. (1992), esta divisão é dada pelo duplo compartimento torácico e Tórax Superior + Tórax Inferior.\n\nÉ a partir destas subdivisões que será desenvolvida a medição mostrada neste trabalho.\nPara o desenvolvimento da rotina que mede os ângulos, utilizou-se o produto escalar entre os vetores gerados a partir dos três pontos (Boulos e Camargo, 1987).\n\nGonzáles e Woods (2004) mostram uma excelente abordagem sobre processamento de imagens e MATLAB.\nEste trabalho baseou-se em algumas rotinas lá mostradas.", 
+            "Título|||Texto antes. [[[/assets/img/geometriaangularjoelho.jpg~~~Autor Fulano / Site X]]] Texto depois. Agora vamos inserir mais uma imagem: [[[/assets/img/geometriaangularjoelho.jpg~~~Autor Fulano / Site X]]] Agora temos mais um texto para fins de teste."
+          ]
+        }, 
+        "analisedeforcas": {
+          "idMat": "analisedeforcas",
+          "name": "Análise de forças", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "Título|||https://www.example.com/texto-matematica-1",
+            "Título|||https://www.example.com/texto-matematica-2"
+          ]
+        }, 
+        "dosagemdemedicamentos": {
+          "idMat": "dosagemdemedicamentos",
+          "name": "Dosagem de medicamentos", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "https://www.example.com/texto-matematica-1",
+            "https://www.example.com/texto-matematica-2"
+          ]
+        }
+      },
+      "fisica":  {
+        "mecanica": {
+          "idMat": "mecanica",
+          "name": "Mecânica", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "Movimentos|||https://www.example.com/texto-matematica-1",
+            "Força e atrito|||https://www.example.com/texto-matematica-2"
+          ]
+        }, 
+        "biomecanica": {
+          "idMat": "biomecanica",
+          "name": "Biomecânica", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "Força e atrito|||https://www.example.com/texto-matematica-1",
+            "Não sei o que por|||https://www.example.com/texto-matematica-2"
+          ]
+        }, 
+        "termoterapiaecrioteram": {
+          "idMat": "termoterapiaecrioteram",
+          "name": "Termoterapia e crioterapia", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "https://www.example.com/texto-matematica-1",
+            "https://www.example.com/texto-matematica-2"
+          ]
+        }
+      }
+    }
+  }, 
+  {
+    "id": "engenharia",
+    "name": "Engenharia",
+    "image": "",
+    "materials": {
+      "matematica": {
+        "geometriaeangulorarticurares": {
+          "idMat": "agostinhocarrara",
+          "name": "Agostinho carrara", 
+          "videos": [
+            "Youtube|||https://youtu.be/OiiFQB82nkk?si=VY7qgz28CJZJBEsZ",
+            "Youtube|||https://youtu.be/VQVpG5qTRlk?si=V806L2f3oUxg769Y"
+          ],
+          "textos": [
+            "Título|||A Fotogrametria digital, segundo Atkinson (1996), Patias (2002) e Mitchel e Newton (2002), tem sido bem recebida na área médica.\n\nNesses últimos anos, a tecnologia digital tornou-se popular no Brasil.\nA fotografia digital, com excelência na qualidade das fotos e custo acessível, mostrou-se um instrumento em potencial para a avaliação fisioterapêutica.\n\nNeste estudo, em especial, para medir amplitudes de movimento do corpo humano.\nO interesse da metodologia aqui desenvolvida para medir angulações no corpo humano surgiu da dificuldade da utilização do goniômetro convencional em determinadas articulações.\n\nO estudo desse método é interessante, na medida em que proporciona feedback visual ao paciente, evidenciando a evolução do tratamento.\nA escolha deste método ocorreu no trabalho de Denise Ricieri, encontrado em http://www.inspirar.com.br/img_insp/359,20,Identificação de Padrões Respiratórios através da Fotogrametria Computadorizada.\n\nNo modelo mecânico do corpo humano, segundo Konno e Mead (1967), possui-se um duplo compartimento para a parede torácica (CHEST WALL) e Tórax + Abdome.\nPara Ward et al. (1992), esta divisão é dada pelo duplo compartimento torácico e Tórax Superior + Tórax Inferior.\n\nÉ a partir destas subdivisões que será desenvolvida a medição mostrada neste trabalho.\nPara o desenvolvimento da rotina que mede os ângulos, utilizou-se o produto escalar entre os vetores gerados a partir dos três pontos (Boulos e Camargo, 1987).\n\nGonzáles e Woods (2004) mostram uma excelente abordagem sobre processamento de imagens e MATLAB.\nEste trabalho baseou-se em algumas rotinas lá mostradas.", 
+            "Título|||O peito do pé do Pedro é preto"
+          ]
+        }, 
+        "analisedeforcas": {
+          "idMat": "pitolomeunot",
+          "name": "pitolomeu not", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "Título|||https://www.example.com/texto-matematica-1",
+            "Título|||https://www.example.com/texto-matematica-2"
+          ]
+        }
+      },
+      "fisica":  {
+        "mecanica": {
+          "idMat": "mecanica",
+          "name": "Mecânica", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "https://www.example.com/texto-matematica-1",
+            "https://www.example.com/texto-matematica-2"
+          ]
+        }, 
+        "biomecanica": {
+          "idMat": "chaves",
+          "name": "Chaves", 
+          "videos": [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+          ],
+          "textos": [
+            "https://www.example.com/texto-matematica-1",
+            "https://www.example.com/texto-matematica-2"
+          ]
+        }
+      }
+    }
+  }
+]
