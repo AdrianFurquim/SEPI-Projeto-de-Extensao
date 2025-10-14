@@ -196,12 +196,3 @@ Exemplo dentro de `textos`:
 
 ---
 
-## Dúvidas ou ajustes
-
-Se quiser, eu posso:
-
-* Validar automaticamente um arquivo JSON que você enviar (procuro por erros de formatação e inconsisências de ids);
-* Gerar um script simples de validação em JavaScript/Python;
-* Converter texto com marcações especiais em HTML pronto para o front-end.
-
-Fique à vontade para pedir qualquer um desses itens.
