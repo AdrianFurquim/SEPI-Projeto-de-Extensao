@@ -1,5 +1,3 @@
-// car.js (refatorado)
-
 function getParam(name) {
   return new URLSearchParams(location.search).get(name);
 }

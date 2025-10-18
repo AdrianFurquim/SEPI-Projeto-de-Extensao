@@ -789,6 +789,93 @@ body {
     border-radius: 1.5em;
 } 
 
+/* Page admin */
+
+.title-material-input{
+    width: 100%;
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: solid 0.5px rgb(28, 161, 10);
+    padding: .3rem .5rem;
+    background-color: #16b11625;
+}
+
+.banner-material-input{
+    width: 100%;
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: solid 0.5px rgb(28, 161, 10);
+    padding: .3rem .5rem;
+    background-color: #e3ffe3;
+}
+
+.texto-titulo{
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: solid 0.5px rgb(28, 161, 10);
+    padding: .3rem .5rem;
+    background-color: #e3ffe3;
+}
+
+.btn-add-text, .btn-add-video, .btn-dup, .btn-del, .btn-add-mat, .rm-texto{
+    padding: 5px;
+    border-radius: 7px;
+    border: none;
+    background-color: #3CB170;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-add-mat{
+    width: 100%;
+}
+
+.btn-edit {
+  background-color: rgb(66, 66, 255);
+  color: white;
+  border: none;
+  border-radius: 100%;
+  padding: 5px;
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-edit:hover {
+  transform: scale(1.2); 
+}
+
+.btn-delete{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    padding: 5px;
+    height: 2em;
+    width: 2em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-delete:hover {
+  transform: scale(1.2); 
+}
+
+.btn--primary{
+    text-decoration: none;
+}
+
+.create-name{
+    font-size: 0.8em;
+    border-radius: 5px;
+    border: solid 0.5px rgb(28, 161, 10);
+    padding: .3rem .5rem;
+    background-color: #e3ffe3;
+    margin-left: 1em;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .content-grid {
