@@ -908,3 +908,86 @@ body {
         gap: 1rem;
     }
 }
+
+/* Tema claro (padrão) */
+body {
+  background-color: #ffffff;
+  color: #222222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 🌞 Tema claro (padrão) */
+body {
+  background-color: #f5f6fa;
+  color: #1c1c1c;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 🌙 Tema escuro suave */
+body.dark-mode {
+  background-color: #1e1e2f; /* Cinza-azulado escuro suave */
+  color: #e4e6eb; /* Texto suave, não branco puro */
+}
+
+/* Links */
+a {
+  color: #0056b3;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode a {
+  color: #7ab8ff;
+}
+
+/* Cards, se o site tiver */
+.card {
+  background-color: #ffffff;
+  color: #222;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode .card {
+  background-color: #2a2a3b;
+  color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Cabeçalho */
+header {
+  background-color: #ffffff;
+  color: #222;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode header {
+  background-color: #242437;
+  color: #f1f1f1;
+}
+
+/* Rodapé */
+footer {
+  background-color: #f1f1f1;
+  color: #222;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode footer {
+  background-color: #1c1c2b;
+  color: #d1d1d1;
+}

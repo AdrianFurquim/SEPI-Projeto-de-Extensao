@@ -25,8 +25,8 @@
     </nav>
     <div class="topbar__actions">
       <input id="searchInput" type="search" placeholder="Buscar cursos e e‑books…" aria-label="Buscar" />
-      <!-- <button id="btnDark" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌓</button>
-      <button id="btnLogin" class="btn btn--primary">Entrar</button> -->
+      <button id="btnDark" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌓</button>
+      <!-- <button id="btnLogin" class="btn btn--primary">Entrar</button> -->
     </div>
   </header>
 
@@ -67,5 +67,29 @@
   </dialog>
 
   <script src="./assets/js/app.js"></script>
+  <script>
+  const btnDark = document.getElementById("btnDark");
+  const themeIcon = document.getElementById("themeIcon");
+  const body = document.body;
+
+  // Verifica se o usuário já tinha escolhido um tema antes
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    themeIcon.textContent = "☀️";
+  }
+
+  btnDark.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    // Muda o ícone e salva preferência
+    if (body.classList.contains("dark-mode")) {
+      themeIcon.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
+    } else {
+      themeIcon.textContent = "🌙";
+      localStorage.setItem("theme", "light");
+    }
+  });
+</script>
 </body>
 </html>
