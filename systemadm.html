@@ -17,15 +17,20 @@
       <small>Matemática & Física - Modificação de conteúdo</small>
     </div>
     <nav class="nav" aria-label="principal">
-      <button class="nav__link" data-route="home">Início</button>
-      <button class="nav__link" data-route="courses">Cursos</button>
-      <button class="nav__link" data-route="ebooks">E-books</button>
+      <a href="index.html">
+        <button class="nav__link" data-route="home">Início</button>
+      </a>
+      <!-- <button class="nav__link" data-route="courses">Cursos</button>
+      <button class="nav__link" data-route="ebooks">E-books</button> -->
       <!-- <button class="nav__link" data-route="my">Meu Aprendizado</button>
       <button class="nav__link" data-route="admin">Admin</button> -->
     </nav>
     <div class="topbar__actions">
-      <input id="searchInput" type="search" placeholder="Buscar cursos e e‑books…" aria-label="Buscar" />
-      <!-- <button id="btnDark" class="icon-btn" title="Alternar tema" aria-label="Alternar tema">🌓</button>
+      <!-- <input id="searchInput" type="search" placeholder="Buscar cursos e e‑books…" aria-label="Buscar" /> -->
+      <button id="btnDark" class="icon-btn" title="Alternar tema"
+        aria-pressed="false" aria-label="Ativar modo escuro">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
       <button id="btnLogin" class="btn btn--primary">Entrar</button> -->
     </div>
   </header>
@@ -291,7 +296,7 @@
     </form>
   </dialog>
 
-  <script src="./assets/js/app.js"></script>
+  <!-- <script src="./assets/js/app.js"></script> -->
   <script src="./assets/js/crud.js"></script>
   <script>
         function toggleSection(sectionId, material) {
