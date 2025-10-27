@@ -132,12 +132,31 @@ body{
 .card__thumb::after{
   content:""; position:absolute; inset:0; background:radial-gradient(1200px 400px at 10% -10%, rgba(124,156,255,.25), transparent);
 }
-.badge{position:absolute; top:10px; left:10px; padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.45); border:1px solid var(--stroke); color:#fff; font-size:12px}
-.card__body{padding:14px; display:flex; flex-direction:column; gap:10px; flex:1}
+
+.badge{
+    position:absolute; 
+    top:10px; 
+    left:10px; 
+    padding:6px 10px; 
+    border-radius:999px; 
+    background:rgba(0,0,0,.45); 
+    border:1px solid var(--stroke); 
+    color:#fff; 
+    font-size:12px;
+}
+
+.card__body{
+    padding:14px; 
+    display:flex; 
+    flex-direction:column; 
+    gap:10px; 
+    flex:1;
+}
+
 .card__title{margin:0; font-size:16px}
 .card__desc{margin:0; color:var(--muted)}
 .card__meta{display:flex; gap:10px; flex-wrap:wrap; color:var(--muted); font-size:12px}
-.card__actions{margin-top:auto; display:flex; gap:8px; justify-content:space-between; align-items:center; padding:12px 14px; border-top:1px solid var(--stroke)}
+.card__actions{margin-top:auto; display:flex; gap:8px; justify-content:space-between; align-items:center; padding: 1.2em; }
 .progress{height:8px; background:#203a20; border-radius:999px; overflow:hidden}
 .progress__bar{height:100%; background:linear-gradient(135deg, var(--brand), var(--brand-2)); width:0%}
 

@@ -53,8 +53,34 @@
 
   // tenta renomear a chave do material dentro do course.materials[areaKey]
   function tryRenameMaterialKey(course, areaKey, oldId, newId, mat) {
-    if (!oldId || !newId) return oldId;
-    if (oldId === newId) return oldId;
+    if (!newId) return oldId || '';
+    // se não havia oldId mas a chave existente é baseada em outra coisa, tentaremos descobrir:
+    if (!oldId) {
+      // procurar key que referencia exatamente o objeto `mat`
+      const area = (course.materials && course.materials[areaKey]) || {};
+      for (const k of Object.keys(area)) {
+        if (area[k] === mat) { oldId = k; break; }
+      }
+    }
+    if (!oldId) {
+      // não havia chave conhecida — tentamos só inserir com newId
+      if (!course.materials) course.materials = {};
+      if (!course.materials[areaKey]) course.materials[areaKey] = {};
+      // se já existir newId -> conflito
+      if (course.materials[areaKey][newId]) {
+        showStatus(`Já existe material com id "${newId}". Renomeação não realizada.`);
+        return oldId || '';
+      }
+      course.materials[areaKey][newId] = mat;
+      try { mat.idMat = newId; } catch(e){}
+      // atualizar dataset
+      document.querySelectorAll('.lesson-item').forEach(item => {
+        if (item.dataset && (item.dataset.id === oldId || !item.dataset.id)) item.dataset.id = newId;
+      });
+      return newId;
+    }
+
+    if (oldId === newId) return newId;
     if (!course.materials) course.materials = {};
     if (!course.materials[areaKey]) course.materials[areaKey] = {};
     // se já existir chave com newId -> conflito
@@ -65,7 +91,6 @@
     // renomear: atribuir e deletar antigo
     course.materials[areaKey][newId] = mat;
     try { delete course.materials[areaKey][oldId]; } catch(e){}
-    // atualizar propriedade idMat se existir
     try { mat.idMat = newId; } catch(e){}
     // atualizar dataset nos elementos da lista para manter seleção visual
     document.querySelectorAll('.lesson-item').forEach(item => {
@@ -80,6 +105,17 @@
       const res = await fetch(DATA_URL, { cache:'no-store' });
       if (!res.ok) throw new Error('Falha ao carregar JSON: ' + res.status);
       contents = await res.json();
+
+      // --- Normalizar: garantir que cada material tenha idMat (usa a chave caso falte)
+      contents.forEach(course => {
+        if (!course || !course.materials) return;
+        Object.keys(course.materials).forEach(areaKey => {
+          Object.keys(course.materials[areaKey]).forEach(matKey => {
+            const m = course.materials[areaKey][matKey];
+            if (m && !m.idMat) m.idMat = matKey;
+          });
+        });
+      });
 
       // --- novo: se a URL pede um id que não existe, verifique sessionStorage para nova profissão ---
       if (currentCourseId) {
@@ -117,6 +153,16 @@
           if (Array.isArray(overrideArr)) {
             contents = overrideArr;
             console.log('Aplicado override vindo da Home (sessionStorage).');
+            // garantir idMat também para override
+            contents.forEach(course => {
+              if (!course || !course.materials) return;
+              Object.keys(course.materials).forEach(areaKey => {
+                Object.keys(course.materials[areaKey]).forEach(matKey => {
+                  const m = course.materials[areaKey][matKey];
+                  if (m && !m.idMat) m.idMat = matKey;
+                });
+              });
+            });
           }
         }
       } catch(err) {
@@ -171,7 +217,9 @@
       const mat = materias[k];
       const item = document.createElement('div');
       item.className = 'lesson-item';
-      item.dataset.id = mat.idMat || k;
+      // dataset id = preferencialmente mat.idMat, se não existir utiliza a chave k
+      const useId = mat && mat.idMat ? mat.idMat : k;
+      item.dataset.id = useId;
       item.style.display = 'flex';
       item.style.justifyContent = 'space-between';
       item.style.alignItems = 'center';
@@ -188,12 +236,12 @@
       actions.style.display='flex';
       actions.style.gap='6px';
       actions.innerHTML = `
-        <button class="btn-edit" data-id="${escapeHtml(mat.idMat||k)}">
+        <button class="btn-edit" data-id="${escapeHtml(useId)}">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
           </svg>
         </button>
-        <button class="btn-delete" data-id="${escapeHtml(mat.idMat||k)}">
+        <button class="btn-delete" data-id="${escapeHtml(useId)}">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
             <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -204,25 +252,26 @@
       item.appendChild(left);
       item.appendChild(actions);
 
-      // click no nome abre editor
+      // click no nome abre editor (passando matKey = k)
       item.querySelector('.lesson-name').addEventListener('click', () => {
         // marca visual
         container.querySelectorAll('.lesson-item').forEach(i=>i.classList.remove('active'));
         item.classList.add('active');
-        renderLessonEditor(course, areaKey, mat);
+        renderLessonEditor(course, areaKey, mat, k);
       });
 
-      // editar botão
+      // editar botão (passando matKey)
       item.querySelector('.btn-edit').addEventListener('click', (e) => {
         e.stopPropagation();
-        renderLessonEditor(course, areaKey, mat);
+        renderLessonEditor(course, areaKey, mat, k);
       });
 
-      // excluir
+      // excluir -- usa mat.idMat || k
       item.querySelector('.btn-delete').addEventListener('click', (e) => {
         e.stopPropagation();
         if (!confirm(`Excluir "${mat.name}"?`)) return;
-        delete course.materials[areaKey][mat.idMat];
+        const keyToDelete = (mat && mat.idMat) ? mat.idMat : k;
+        try { delete course.materials[areaKey][keyToDelete]; } catch(e){}
         renderAll();
         showStatus('Aula excluída.');
       });
@@ -262,7 +311,8 @@
   }
 
   // Editor de aula (leftContent e rightContent)
-  function renderLessonEditor(course, areaKey, mat) {
+  // agora recebe matKey (a chave original no objeto materials)
+  function renderLessonEditor(course, areaKey, mat, matKey) {
     if (!leftContent || !rightContent) return;
     leftContent.innerHTML = '';
     rightContent.innerHTML = '';
@@ -274,12 +324,12 @@
       // enquanto digita, atualiza nome (visualmente)
       bannerInput.addEventListener('input', e => {
         mat.name = e.target.value; // mantém como o usuário digitar
-        updateListLabels(mat.idMat, mat.name);
+        updateListLabels(mat.idMat || matKey, mat.name);
       });
       // ao sair do input (blur) tenta renomear o idMat conforme regra
       bannerInput.addEventListener('blur', () => {
         const newId = normalizeMatIdFromName(mat.name);
-        const oldId = mat.idMat || '';
+        const oldId = (mat && mat.idMat) ? mat.idMat : (matKey || '');
         const finalId = tryRenameMaterialKey(course, areaKey, oldId, newId, mat);
         // se renomeou, atualizar label
         updateListLabels(finalId, mat.name);
@@ -305,13 +355,13 @@
     // enquanto digita atualiza nome (visualmente)
     matNameInput.addEventListener('input', e => {
       mat.name = e.target.value; // mantém input do usuário
-      updateListLabels(mat.idMat, mat.name);
+      updateListLabels(mat.idMat || matKey, mat.name);
     });
 
     // ao sair do input (blur) tenta renomear o idMat conforme regra
     matNameInput.addEventListener('blur', () => {
       const newId = normalizeMatIdFromName(mat.name);
-      const oldId = mat.idMat || '';
+      const oldId = (mat && mat.idMat) ? mat.idMat : (matKey || '');
       const finalId = tryRenameMaterialKey(course, areaKey, oldId, newId, mat);
       updateListLabels(finalId, mat.name);
     });
@@ -319,12 +369,12 @@
     header.querySelector('.btn-add-text').addEventListener('click', () => {
       mat.textos = mat.textos || [];
       mat.textos.push('Novo Título|||Novo conteúdo...');
-      renderLessonEditor(course, areaKey, mat);
+      renderLessonEditor(course, areaKey, mat, matKey);
     });
     header.querySelector('.btn-add-video').addEventListener('click', () => {
       mat.videos = mat.videos || [];
       mat.videos.push('Autor ||| https://');
-      renderLessonEditor(course, areaKey, mat);
+      renderLessonEditor(course, areaKey, mat, matKey);
     });
     header.querySelector('.btn-dup').addEventListener('click', () => {
       // duplicar: gerar id a partir do nome do clone (normalizado) e garantir unicidade
@@ -344,7 +394,8 @@
     });
     header.querySelector('.btn-del').addEventListener('click', () => {
       if (!confirm(`Excluir aula "${mat.name}"?`)) return;
-      delete course.materials[areaKey][mat.idMat];
+      const keyToDelete = (mat && mat.idMat) ? mat.idMat : matKey;
+      try { delete course.materials[areaKey][keyToDelete]; } catch(e){}
       leftContent.innerHTML = '';
       rightContent.innerHTML = '';
       renderAll();
@@ -384,7 +435,7 @@
       block.querySelector('.rm-texto').addEventListener('click', () => {
         if (!confirm('Remover este bloco de texto?')) return;
         mat.textos.splice(idx,1);
-        renderLessonEditor(course, areaKey, mat);
+        renderLessonEditor(course, areaKey, mat, matKey);
       });
 
       // atualizações
@@ -429,7 +480,7 @@
       vblock.querySelector('.rm-video').addEventListener('click', () => {
         if (!confirm('Remover este vídeo?')) return;
         mat.videos.splice(idx,1);
-        renderLessonEditor(course, areaKey, mat);
+        renderLessonEditor(course, areaKey, mat, matKey);
       });
 
       const autorInput = vblock.querySelector('.video-autor');
@@ -479,7 +530,6 @@
 
   // ----- helper: salva usando File System Access API (quando disponível) -----
   async function saveUsingFileSystem(jsonStr) {
-    // tenta showSaveFilePicker (permite escolher/criar arquivo)
     try {
       if (window.showSaveFilePicker) {
         const opts = {
@@ -497,7 +547,6 @@
         return true;
       }
 
-      // fallback: alguns navegadores tem showOpenFilePicker para escolher arquivo existente
       if (window.showOpenFilePicker) {
         const [handle] = await window.showOpenFilePicker({
           types: [{
@@ -514,21 +563,19 @@
         return true;
       }
 
-      // API não disponível
       return false;
     } catch (err) {
-      // usuário pode cancelar o diálogo ou ocorrer erro; trataremos como falha (retorna false)
       console.error('saveUsingFileSystem erro:', err);
       return false;
     }
   }
 
-  // ----- SALVAR (botão existente .next-activity-btn) - substitui versão anterior -----
+  // ----- SALVAR (botão existente .next-activity-btn) -----
   async function onSaveClicked() {
     try {
       const json = JSON.stringify(contents, null, 2);
 
-      // Novo: tentativa de salvar diretamente no disco com File System API
+      // Tenta salvar diretamente no disco com File System API
       if (window && (window.showSaveFilePicker || window.showOpenFilePicker)) {
         const ok = await saveUsingFileSystem(json);
         if (ok) return; // salvo com sucesso
@@ -552,7 +599,6 @@
     }
   }
 
-
   // Hook no botão SALVAR se existir
   if (salvarBtn) {
     salvarBtn.addEventListener('click', (e) => {
@@ -568,6 +614,7 @@
   window.CRUD_SEPI = {
     getContents: () => contents,
     saveNow: onSaveClicked,
-    setSaveMode: (m) => { if (m==='post' || m==='download') { saveMode = m; showStatus('Modo: '+m); } }
+    // manter compatibilidade: setSaveMode não é usado no fluxo atual, mas deixo a função
+    setSaveMode: (m) => { showStatus('Modo de salvamento (download/File API).'); }
   };
 })();

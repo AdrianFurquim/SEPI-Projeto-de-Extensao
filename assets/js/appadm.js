@@ -22,6 +22,25 @@
     return onlyLetters;
   }
 
+  // nova util: normaliza texto para comparação/alphabetical order (mantém espaços/ponctuação removida)
+  function normalizeForSort(str = '') {
+    const s = String(str || '').trim().toLowerCase();
+    // remove diacríticos
+    const noAcc = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    // remove caracteres não alfanuméricos exceto espaço
+    const cleaned = noAcc.replace(/[^a-z0-9 ]/g, '');
+    return cleaned;
+  }
+
+  // util para busca: normalize e remove espaços desnecessários (para busca por substring)
+  function normalizeForSearch(str = '') {
+    const s = String(str || '').trim().toLowerCase();
+    const noAcc = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    // manter letras e números e espaços para permitir busca por "parte do nome"
+    const cleaned = noAcc.replace(/[^a-z0-9 ]/g, '');
+    return cleaned;
+  }
+
   // cria elemento com classe
   function el(tag, cls) {
     const e = document.createElement(tag);
@@ -91,13 +110,11 @@
             accept: { 'application/json': ['.json', 'application/json'] }
           }]
         });
-        // opcional: checar nome sugerido se quiser forçar data.json
         const writable = await handle.createWritable();
         await writable.write(jsonStr);
         await writable.close();
         return { ok: true, method: 'openPicker' };
       } catch (err) {
-        // usuário cancelou ou ocorreu erro: continuar para tentar showSaveFilePicker
         console.warn('showOpenFilePicker falhou/cancelado:', err);
       }
     }
@@ -204,8 +221,11 @@
       newList.push(newProf);
       saveOverride(newList);
 
-      // redireciona ao CRUD
-      location.href = `/systemadm.html?id=${encodeURIComponent(id)}`;
+      // redireciona ao CRUD (mantido comentado)
+      // location.href = `/systemadm.html?id=${encodeURIComponent(id)}`;
+      showStatus(`Profissão "${nome}" criada (salva temporariamente).`);
+      // Atualiza a UI sem recarregar
+      renderHome(newList);
     });
 
     // Enter no input cria
@@ -316,7 +336,22 @@
     return card;
   }
 
-  // renderiza a home completa
+  // Ordena profissões alfabeticamente pelo 'name' (tratamento de acentos e caixa)
+  function sortProfessionsAlpha(profs) {
+    if (!Array.isArray(profs)) return profs;
+    // criar cópia para não mutar original (boa prática)
+    const arr = profs.slice();
+    arr.sort((a, b) => {
+      const an = normalizeForSort(a && a.name ? a.name : (a && a.id ? a.id : ''));
+      const bn = normalizeForSort(b && b.name ? b.name : (b && b.id ? b.id : ''));
+      // usar localeCompare como fallback com 'pt' (sensibilidade base)
+      const cmp = an.localeCompare(bn, 'pt', { sensitivity: 'base', numeric: true });
+      return cmp;
+    });
+    return arr;
+  }
+
+  // renderiza a home completa com campo de busca
   function renderHome(profs){
     const root = document.querySelector(ROOT_SEL) || document.body;
     // limpa
@@ -335,26 +370,93 @@
     heroWrap.appendChild(hero);
     root.appendChild(heroWrap);
 
-    // grid
+    // grid section
     const sec = el('section','section');
     const head = el('div','section__head'); head.innerHTML = `<h2 style="margin:0">Profissões</h2>`;
     sec.appendChild(head);
 
+    // === Adiciona input de busca logo abaixo do título "Profissões" ===
+    const searchWrap = el('div','search-wrap');
+    searchWrap.style.margin = '12px 0';
+    searchWrap.innerHTML = `
+      <input id="prof-search" type="search" placeholder="Buscar profissões (parte do nome ou id)" style="padding:8px; width:60%; max-width:400px;">
+      <button id="prof-search-clear" class="btn" type="button" style="margin-left:8px;">Limpar</button>
+      <div style="margin-top:6px;font-size:13px;color:#666">A busca ignora acentos e não diferencia maiúsculas/minúsculas.</div>
+    `;
+    sec.appendChild(searchWrap);
+
+    // container grid
     const grid = el('div','grid');
-    // primeiro: criar (recebe lista para checagem de duplicatas)
-    grid.appendChild(cardCreate(profs));
-
-    // depois: cada profissão
-    (profs || []).forEach(p => {
-      try {
-        grid.appendChild(cardProfession(p, profs));
-      } catch (err) {
-        console.warn('Erro ao gerar card para', p, err);
-      }
-    });
-
     sec.appendChild(grid);
     root.appendChild(sec);
+
+    // preparar lista ordenada
+    const sorted = sortProfessionsAlpha(profs || []);
+
+    // função que renderiza o conteúdo do grid de acordo com um termo de busca ('' => tudo)
+    function renderGridWithFilter(queryNormalized) {
+      // limpa grid
+      grid.innerHTML = '';
+      // sempre adicionar o card de criação primeiro
+      grid.appendChild(cardCreate(sorted));
+
+      // se queryNormalized for vazio, mostra todos; senão filtra
+      const toShow = (queryNormalized && queryNormalized.length)
+        ? sorted.filter(p => {
+            const nameNorm = normalizeForSearch(p && p.name ? p.name : '');
+            const idNorm = normalizeForSearch(p && p.id ? p.id : '');
+            // corresponder se name ou id contém o termo
+            return nameNorm.indexOf(queryNormalized) !== -1 || idNorm.indexOf(queryNormalized) !== -1;
+          })
+        : sorted;
+
+      toShow.forEach(p => {
+        try {
+          grid.appendChild(cardProfession(p, sorted));
+        } catch (err) {
+          console.warn('Erro ao gerar card para', p, err);
+        }
+      });
+
+      // se não tiver resultados além do card de criar, mostrar mensagem
+      if (toShow.length === 0) {
+        const msg = el('div','no-results');
+        msg.style.padding = '12px';
+        msg.style.color = '#666';
+        msg.textContent = 'Nenhuma profissão encontrada com esse termo.';
+        grid.appendChild(msg);
+      }
+    }
+
+    // hooks do input
+    const inputSearch = document.getElementById('prof-search');
+    const btnClear = document.getElementById('prof-search-clear');
+
+    // render inicial (sem filtro)
+    renderGridWithFilter('');
+
+    // listener de input - busca dinâmica
+    inputSearch.addEventListener('input', (ev) => {
+      const q = String(ev.target.value || '').trim();
+      const qNorm = normalizeForSearch(q);
+      renderGridWithFilter(qNorm);
+    });
+
+    // limpar busca
+    btnClear.addEventListener('click', () => {
+      inputSearch.value = '';
+      inputSearch.focus();
+      renderGridWithFilter('');
+    });
+
+    // permitir buscar com Enter no input (mesma ação do input)
+    inputSearch.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter') {
+        ev.preventDefault();
+        const qNorm = normalizeForSearch(inputSearch.value || '');
+        renderGridWithFilter(qNorm);
+      }
+    });
   }
 
   // load JSON e render
