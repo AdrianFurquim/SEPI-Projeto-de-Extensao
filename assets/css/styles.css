@@ -882,6 +882,39 @@ body {
   transform: scale(1.2); 
 }
 
+.rm-video{
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.rm-video:hover {
+  transform: scale(1.05); 
+}
+
+.video-autor{
+    padding: 0.3em;
+    border-radius: 0.4em;
+    border: #000 solid 0.5px;
+}
+
+.video-url{
+    padding: 0.3em;
+    border-radius: 0.4em;
+    border: #000 solid 0.5px;
+}
+
+.video-header{
+    display:flex;
+    gap:8px;
+    justify-content: space-between;
+}
+
 .btn--primary{
     text-decoration: none;
 }
@@ -893,6 +926,29 @@ body {
     padding: .3rem .5rem;
     background-color: #e3ffe3;
     margin-left: 1em;
+}
+
+#prof-search{
+    border-radius: 1em;
+    border: 0.5px solid black;
+}
+
+#prof-search-clear{
+    border: none;
+    background-color: #3CB170;
+    color: white;
+    transition: ease 0.6s;
+}
+
+#prof-search-clear:hover{
+    background-color: #0f7e41;
+    transform: scale(1.05); 
+}
+
+.card__create-form{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-around;
 }
 
 /* Responsive Design */

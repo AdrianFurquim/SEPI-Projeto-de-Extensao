@@ -342,7 +342,7 @@
     header.style.alignItems='center';
     header.style.gap='8px';
     header.innerHTML = `
-      <label>Título: <input type="text" class="mat-name-input" value="${escapeHtml(mat.name||'')}"></label>
+      <label style="display: none;">Título: <input type="text" class="mat-name-input" value="${escapeHtml(mat.name||'')}"></label>
       <button class="btn-add-text">+ Texto</button>
       <button class="btn-add-video">+ Vídeo</button>
       <button class="btn-dup">Duplicar</button>
@@ -469,7 +469,7 @@
       vblock.style.padding = '8px';
       vblock.style.marginBottom = '8px';
       vblock.innerHTML = `
-        <div style="display:flex;gap:8px;align-items:center;">
+        <div class="video-header">
           <label>Autor: <input class="video-autor" value="${escapeHtml(autor)}"></label>
           <button class="rm-video">Remover</button>
         </div>

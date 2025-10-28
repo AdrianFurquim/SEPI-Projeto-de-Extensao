@@ -12,18 +12,6 @@
     "materials": {}
   },
   {
-    "id": "engenhariadacomputacao",
-    "name": "Engenharia da Computação",
-    "image": "",
-    "materials": {}
-  },
-  {
-    "id": "cienciasaeronauticas",
-    "name": "Ciências Aeronáuticas",
-    "image": "",
-    "materials": {}
-  },
-  {
     "id": "educacaofisica",
     "name": "Educação Física",
     "image": "",
@@ -57,14 +45,14 @@
     "materials": {}
   },
   {
-    "id": "engenhariaaeroespacial",
-    "name": "Engenharia Aeroespacial",
+    "id": "engenhariacivil",
+    "name": "Engenharia Civil",
     "image": "",
     "materials": {}
   },
   {
-    "id": "engenhariacivil",
-    "name": "Engenharia Civil",
+    "id": "engenhariadacomputacao",
+    "name": "Engenharia da Computação",
     "image": "",
     "materials": {}
   },
