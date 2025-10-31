@@ -1,0 +1,64 @@
+/* Botão do menu */
+.menu-toggle {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 101;
+}
+
+/* Menu lateral */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  transition: left 0.3s ease;
+  padding: 20px;
+  z-index: 100;
+}
+
+.drawer.open {
+  left: 0;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.drawer li {
+  margin: 20px 0;
+}
+
+.drawer a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Esconde o botão em telas maiores */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .drawer {
+    position: static;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+  }
+
+  .drawer ul {
+    display: flex;
+    gap: 20px;
+  }
+}
