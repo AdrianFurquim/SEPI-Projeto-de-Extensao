@@ -11,11 +11,13 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand" role="banner" aria-label="EduLab Home">
-      <span class="logo">∑</span>
-      <h1>SEPI</h1>
-      <small>Matemática & Física</small>
-    </div>
+      <a href="index.html" class="to-home">
+        <div class="brand" role="banner" aria-label="EduLab Home">
+          <span class="logo">∑</span>
+          <h1>SEPI</h1>
+          <small>Matemática & Física</small>
+        </div>
+      </a>
     <nav class="nav" aria-label="principal">
       <a href="index.html">
         <button class="nav__link" data-route="home">Início</button>
@@ -30,6 +32,11 @@
       <button id="btnDark" class="icon-btn" title="Alternar tema"
         aria-pressed="false" aria-label="Ativar modo escuro">
         <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+      <button id="hamburgerBtn" class="hamburger" aria-label="Abrir menu" aria-controls="mobileSidebar" aria-expanded="false">
+        <span class="hamburger-bar" aria-hidden="true"></span>
+        <span class="hamburger-bar" aria-hidden="true"></span>
+        <span class="hamburger-bar" aria-hidden="true"></span>
       </button>
       <!-- <button id="btnLogin" class="btn btn--primary">Entrar</button> -->
     </div>
@@ -50,12 +57,6 @@
                     </div>
                     <div class="course-details">
                         <h2 class="title-matetial"> </h2>
-                        <!-- <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 25%"></div>
-                            </div>
-                            <span class="progress-text">25%</span>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -76,28 +77,6 @@
                 </button>
                 <div class="lesson-card lesson-car-mat hidden" id="aula-atual">
                     <div class="lessons-list">
-                        <!-- <div class="lesson-item active">
-                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="5,3 19,12 5,21"/>
-                            </svg>
-                            <span class="lesson-name">Geometria e ângulos articulares</span>
-                            <span class="lesson-duration">12min</span>
-                            <div class="completion-dot"></div>
-                        </div>
-                        <div class="lesson-item">
-                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="5,3 19,12 5,21"/>
-                            </svg>
-                            <span class="lesson-name">Análise de forças</span>
-                            <span class="lesson-duration">9min</span>
-                        </div>
-                        <div class="lesson-item">
-                            <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="5,3 19,12 5,21"/>
-                            </svg>
-                            <span class="lesson-name">Dosagem de medicamentos</span>
-                            <span class="lesson-duration">16min</span>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -116,36 +95,12 @@
                     </svg>
                 </button>
                 <div class="lesson-card lesson-car-fis lessons-list-fisica hidden" id="atividades">
-                    <!-- <div class="activity-item">
-                        <div class="activity-info">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                            </svg>
-                            <span>Mecânica</span>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <div class="activity-info">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                            </svg>
-                            <span>Biomecânica</span>
-                        </div>
-                    </div>
-                    <div class="activity-item">
-                        <div class="activity-info">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                            </svg>
-                            <span>Termoterapia e crioterapia</span>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
             <!-- Resources Section -->
             <div class="sidebar-section">
-                <button class="section-header" onclick="toggleSection('recursos')">
+                <!-- <button class="section-header" onclick="toggleSection('recursos')">
                     <div class="section-title">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="3"/>
@@ -163,7 +118,7 @@
                     <svg class="chevron" id="chevron-recursos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="9,18 15,12 9,6"/>
                     </svg>
-                </button>
+                </button> -->
                 <div class="section-content hidden" id="recursos">
                     <div class="resource-item">
                         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -191,20 +146,6 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Content Header -->
-            <div class="content-header">
-                <div class="lesson-info">
-                    <span class="lesson-number">01</span>
-                    <h1 class="lesson-title">Definição</h1>
-                </div>
-                <button class="next-activity-btn">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22,4 12,14.01 9,11.01"/>
-                    </svg>
-                    PRÓXIMA ATIVIDADE
-                </button>
-            </div>
 
             <!-- Course Header -->
             <div class="course-banner" onclick="">
@@ -215,14 +156,6 @@
             <div class="">
                 <!-- Left Content -->
                 <div class="left-content">
-                    <!-- Lesson Content -->
-                    <!-- <div class="content-card content-card-text">
-                        <div class="content-point">
-                            <div class="bullet-point"></div>
-                            <span>O kernel se desloca em duas dimensões</span>
-                        </div>
-                        
-                    </div> -->
 
                     <!-- Transcript Section -->
                     <div class="content-card">
@@ -244,33 +177,6 @@
 
                 <!-- Right Content - Video -->
                 <div class="right-content">
-                        <!-- <div class="video-player">
-                            <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/VQVpG5qTRlk" 
-                                title="YouTube video player" frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <p>Autor</p> -->
-                    
-                    <!-- Video Tools -->
-                    <!-- <div class="video-tools">
-                        <button class="tool-btn">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="6" height="6"/>
-                                <rect x="15" y="3" width="6" height="6"/>
-                                <rect x="3" y="15" width="6" height="6"/>
-                                <rect x="15" y="15" width="6" height="6"/>
-                            </svg>
-                            Filtros
-                        </button>
-                        <button class="tool-btn">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
-                            </svg>
-                            Atividade
-                        </button>
-                    </div> -->
                 </div>
             </div>
           </main>
@@ -330,9 +236,85 @@
 
         // Initialize first section as open
         document.addEventListener('DOMContentLoaded', function() {
-            // const chevronAulaAtual = document.getElementById('chevron-aula-atual');
-            // chevronAulaAtual.style.transform = 'rotate(90deg)';
         });
+    </script>
+    <script>
+        (function() {
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sidebar = document.querySelector('.sidebar');
+        if (!hamburgerBtn || !sidebar) return;
+
+        // cria backdrop (uma vez)
+        let backdrop = document.querySelector('.sidebar-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'sidebar-backdrop';
+            document.body.appendChild(backdrop);
+        }
+
+        function openSidebar() {
+            document.body.classList.add('nav-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'true');
+            document.documentElement.style.overflow = 'hidden'; // evita scroll no body
+            // move foco pro primeiro item clicável do sidebar
+            const firstFocusable = sidebar.querySelector('button, a, [tabindex]:not([tabindex="-1"])');
+            if (firstFocusable) firstFocusable.focus();
+        }
+
+        function closeSidebar() {
+            document.body.classList.remove('nav-open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.documentElement.style.overflow = '';
+            hamburgerBtn.focus();
+        }
+
+        hamburgerBtn.addEventListener('click', () => {
+            if (document.body.classList.contains('nav-open')) closeSidebar();
+            else openSidebar();
+        });
+
+        // fechar ao clicar no backdrop
+        backdrop.addEventListener('click', closeSidebar);
+
+        // ESC fecha
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.body.classList.contains('nav-open')) {
+            closeSidebar();
+            }
+        });
+
+        // lógica de fechamento ao clicar dentro do sidebar:
+        // - NÃO fecha quando clicar nas seções/headers (".section-header") — isso mantém expand/collapse funcionando
+        // - Fecha quando clicar em itens de conteúdo (".lesson-item", ".resource-item") — que carregam conteúdo
+        sidebar.addEventListener('click', (e) => {
+            // se clicou num header de seção (matéria), NÃO fechar
+            if (e.target.closest('.section-header')) {
+            return; // mantém menu aberto
+            }
+
+            // selectors que devem provocar fechamento (conteúdo selecionado)
+            const shouldCloseSelectors = [
+            '.lesson-item',    // item de aula (conteúdo)
+            '.resource-item',  // item de recurso
+            '.video-block',    // bloco de vídeo, caso tenha
+            'a[data-close="true"]' // links marcados para fechar explicitamente
+            ];
+
+            const shouldClose = shouldCloseSelectors.some(sel => !!e.target.closest(sel));
+            if (shouldClose && window.innerWidth <= 768) {
+            // pequeno delay para permitir que o clique execute a ação (ex: carregar conteúdo)
+            setTimeout(closeSidebar, 140);
+            }
+        });
+
+        // fecha automaticamente caso o usuário redimensione para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && document.body.classList.contains('nav-open')) {
+            closeSidebar();
+            }
+        });
+
+        })();
     </script>
 </body>
 </html>
