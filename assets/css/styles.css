@@ -1071,86 +1071,246 @@ body.nav-open .hamburger .hamburger-bar:nth-child(3) { transform: translateY(-6p
         max-width: 100%;
     }
 }
-
-/* Tema claro (padrão) */
-body {
-  background-color: #ffffff;
-  color: #222222;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* 🌞 Tema claro (padrão) */
+/* Tema claro */
 body {
   background-color: #f5f6fa;
   color: #1c1c1c;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* 🌙 Tema escuro suave */
+/* MODO ESCURO */
 body.dark-mode {
-  background-color: #1e1e2f; /* Cinza-azulado escuro suave */
-  color: #e4e6eb; /* Texto suave, não branco puro */
+  background-color: #1e1e2f;
+  color: #e4e6eb;
 }
 
-/* Links */
-a {
-  color: #0056b3;
-  transition: color 0.3s ease;
+/* Topbar no modo escuro */
+body.dark-mode .topbar {
+  background-color: #242437;
+  border-bottom-color: #3a3a50;
+}
+body.dark-mode .brand small {
+  color: #a0a0b8;
+}
+body.dark-mode .nav__link {
+  background-color: transparent;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+body.dark-mode .nav__link:hover {
+  background-color: #2d2d40;
+}
+body.dark-mode .icon-btn {
+  background-color: #2d2d40;
+  border-color: #3a3a50;
+  color: #e4e6eb;
 }
 
-body.dark-mode a {
-  color: #7ab8ff;
+/* Sidebar no modo escuro */
+body.dark-mode .sidebar {
+  background-color: #242437;
+  border-right-color: #3a3a50;
 }
-
-/* Cards, se o site tiver */
-.card {
-  background-color: #ffffff;
-  color: #222;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: background-color 0.4s ease, color 0.4s ease;
+body.dark-mode .course-title,
+body.dark-mode .section-header,
+body.dark-mode .lesson-name {
+  color: #e4e6eb;
 }
-
+body.dark-mode .section-header:hover {
+  color: #ffffff;
+}
+body.dark-mode .lesson-item {
+  color: #e4e6eb;
+}
+body.dark-mode .lesson-item:hover {
+  background-color: #2d2d40;
+}
+body.dark-mode .lesson-item.active {
+  background-color: rgba(60, 177, 112, 0.2);
+  color: #a8ffcc;
+}
+body.dark-mode .active-lesson-card {
+  background-color: rgba(60, 177, 112, 0.15);
+}
+body.dark-mode .activity-item,
+body.dark-mode .resource-item {
+  color: #e4e6eb;
+}
+body.dark-mode .activity-item:hover,
+body.dark-mode .resource-item:hover {
+  background-color: #2d2d40;
+  color: #ffffff;
+}
+/* Main content no modo escuro */
+body.dark-mode .main-content {
+  background-color: #1e1e2f;
+}
+body.dark-mode .course-banner {
+  background-color: #2c5f44;
+  color: #ffffff;
+}
+/* Content cards no modo escuro */
+body.dark-mode .content-card {
+  background-color: #0a3a1a;
+  border-color: #1d5a2d;
+}
+body.dark-mode .content-card span,
+body.dark-mode .transcript-title,
+body.dark-mode .transcript-text {
+  color: #d5e8dc;
+}
+/* Cards (home/admin) no modo escuro */
 body.dark-mode .card {
   background-color: #2a2a3b;
   color: #e0e0e0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  border-color: #3a3a50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
-
-/* Botão de alternância de tema */
-.theme-toggle {
-  background: none;
+body.dark-mode .card__thumb {
+  background-color: #1d5a2d;
+}
+body.dark-mode .card__title {
+  color: #e4e6eb;
+}
+body.dark-mode .card__desc,
+body.dark-mode .card__meta {
+  color: #a0a0b8;
+}
+/* Botões no modo escuro */
+body.dark-mode .btn {
+  background-color: #2d2d40;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+body.dark-mode .btn:hover {
+  background-color: #3a3a50;
+}
+body.dark-mode .btn--primary {
+  background-color: #3CB170;
+  color: white;
   border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
+}
+body.dark-mode .btn--primary:hover {
+  background-color: #2e8555;
+}
+
+/* Inputs no modo escuro */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="search"],
+body.dark-mode textarea,
+body.dark-mode select,
+body.dark-mode .input,
+body.dark-mode .title-material-input,
+body.dark-mode .banner-material-input,
+body.dark-mode .texto-titulo,
+body.dark-mode .video-autor,
+body.dark-mode .video-url,
+body.dark-mode .create-name {
+  background-color: #2d2d40;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #7a7a90;
+}
+/* Dialog no modo escuro */
+body.dark-mode dialog {
+  background-color: #242437;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+/* Footer no modo escuro */
+body.dark-mode .footer {
+  background-color: #1c1c2b;
+  color: #a0a0b8;
+}
+/* Links no modo escuro */
+body.dark-mode a {
+  color: #7ab8ff;
+}
+body.dark-mode a:hover {
+  color: #a8cfff;
+}
+body.dark-mode .to-home {
   color: inherit;
-  transition: transform 0.2s ease, color 0.3s ease;
 }
-
-.theme-toggle:hover {
-  transform: scale(1.2);
-}
-
-/* Cabeçalho */
-header {
-  background-color: #ffffff;
-  color: #222;
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-
+/* Headers no modo escuro */
 body.dark-mode header {
   background-color: #242437;
-  color: #f1f1f1;
+  color: #e4e6eb;
 }
-
-/* Rodapé */
-footer {
-  background-color: #f1f1f1;
-  color: #222;
-  transition: background-color 0.4s ease, color 0.4s ease;
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode .lesson-title,
+body.dark-mode .couse-banner-title {
+  color: #e4e6eb;
 }
-
-body.dark-mode footer {
-  background-color: #1c1c2b;
-  color: #d1d1d1;
+/* Busca no modo escuro */
+body.dark-mode #prof-search {
+  background-color: #2d2d40;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+body.dark-mode #prof-search-clear {
+  background-color: #3CB170;
+  color: white;
+}
+body.dark-mode #prof-search-clear:hover {
+  background-color: #2e8555;
+}
+/* Chips no modo escuro */
+body.dark-mode .badge {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-color: #3a3a50;
+  color: #ffffff;
+}
+body.dark-mode .chip {
+  background-color: #2d2d40;
+  border-color: #3a3a50;
+  color: #e4e6eb;
+}
+/* Video player no modo escuro */
+body.dark-mode .video-player {
+  background-color: #000000;
+}
+body.dark-mode .video-credit {
+  color: #a0a0b8;
+}
+/* Figcaption no modo escuro */
+body.dark-mode .transcript-caption {
+  color: #a0a0b8;
+}
+/* Mensagens de status/notificação */
+body.dark-mode #home-status,
+body.dark-mode #crud-status {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  color: #ffffff !important;
+}
+/* Backdrop do sidebar mobile */
+body.dark-mode .sidebar-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+body.dark-mode table {
+  background-color: #2a2a3b;
+  color: #e4e6eb;
+}
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #3a3a50;
+}
+/* Scrollbar personalizado no modo escuro */
+body.dark-mode ::-webkit-scrollbar {
+  width: 12px;
+}
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #1e1e2f;
+}
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #3a3a50;
+  border-radius: 6px;
+}
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: #4a4a60;
 }

@@ -183,7 +183,7 @@
     const aOpen = document.createElement('a');
     aOpen.className = 'btn btn--primary';
     aOpen.textContent = 'Entrar';
-    aOpen.href = `/contents.html?id=${encodeURIComponent(id)}`;
+    aOpen.href = `contents.html?id=${encodeURIComponent(id)}`;
 
     left.appendChild(aOpen);
     actions.appendChild(left);

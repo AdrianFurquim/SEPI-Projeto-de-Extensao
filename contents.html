@@ -184,8 +184,6 @@
     <!-- <footer class="footer">
       <p>© <span id="year"></span> SEPI. Feito com HTML, CSS e JavaScript puro.</p>
     </footer> -->
-
-
   <dialog id="videoDialog" class="wide-dialog">
     <form method="dialog" class="dialog__content">
       <h3 id="videoTitle">Aula</h3>
@@ -316,5 +314,31 @@
 
         })();
     </script>
+<script>
+  const btnDark = document.getElementById("btnDark");
+  const themeIcon = document.getElementById("themeIcon");
+  const body = document.body;
+
+  // Verifica tema salvo e aplica IMEDIATAMENTE ao carregar
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    if (themeIcon) themeIcon.textContent = "☀️";
+  }
+
+  // Toggle do tema ao clicar no botão
+  if (btnDark) {
+    btnDark.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        if (themeIcon) themeIcon.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        if (themeIcon) themeIcon.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+  }
+</script>
 </body>
 </html>
