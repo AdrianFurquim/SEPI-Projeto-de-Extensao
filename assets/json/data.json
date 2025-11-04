@@ -3,13 +3,54 @@
     "id": "arquiteturaeurbanismo",
     "name": "Arquitetura e Urbanismo",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "confortoambiental": {
+          "idMat": "confortoambiental",
+          "name": "Conforto ambiental",
+          "videos": [
+            "Arquitetando|||https://youtu.be/RiGUNW7frNc?si=mPgLMsD8yt1eCUfr"
+          ],
+          "textos": []
+        },
+        "calculodecargaspesodosmateriaisequilibrio": {
+          "idMat": "calculodecargaspesodosmateriaisequilibrio",
+          "name": "Cálculo de cargas, peso dos materiais, equilíbrio",
+          "videos": [
+            "artymath|||https://youtu.be/Ht7SoFR_rkM?si=juOtspJNtlbavyne"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "astronomia",
     "name": "Astronomia",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "opticaaplicadaatelescopios": {
+          "idMat": "opticaaplicadaatelescopios",
+          "name": "Óptica aplicada a telescópios",
+          "videos": [
+            "Dragão Na Minha Garagem|||https://youtu.be/GLNDYBmhFC0?si=HoWgp5ZM9oM4K9lK"
+          ],
+          "textos": []
+        }
+      },
+      "matematica": {
+        "calculodeorbitasplanetarias": {
+          "idMat": "calculodeorbitasplanetarias",
+          "name": "Cálculo de órbitas planetárias",
+          "videos": [
+            "Socratica Português|||https://youtu.be/g1b8zZ3LZhY?si=wGEWrdQGbqSMRbDD",
+            "Matemática no Papel|||https://youtu.be/rbAF-Go_L8w?si=2skGsx0ehGSlid5W"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "educacaofisica",
@@ -42,37 +83,148 @@
     "id": "enfermagem",
     "name": "Enfermagem",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "fisicadosfluidospressaoarterialfluxosanguineo": {
+          "idMat": "fisicadosfluidospressaoarterialfluxosanguineo",
+          "name": "Física dos fluidos (pressão arterial, fluxo sanguíneo)",
+          "videos": [
+            "MK Fisiologia|||https://youtu.be/8EdcabztEoY?si=aGSgyMWyiP_RVXN3",
+            "MK Fisiologia|||https://youtu.be/__5UAdtrQtg?si=qFN0-4m0UiijvZSQ"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "engenhariacivil",
     "name": "Engenharia Civil",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "resistenciadosmateriais": {
+          "idMat": "resistenciadosmateriais",
+          "name": "Resistência dos Materiais",
+          "videos": [
+            "Eliel Meireles|||https://youtu.be/Mik4xbC8ipw?si=f53m_Kjd6JRr_Ayw"
+          ],
+          "textos": []
+        },
+        "hidraulicaehidrologia": {
+          "idMat": "hidraulicaehidrologia",
+          "name": "Hidráulica e Hidrologia",
+          "videos": [
+            "PS Videoaulas ENGENHARIA|||https://youtu.be/luwM-3utFi4?si=Tus55IRDuYg0DDuA",
+            "PS Videoaulas ENGENHARIA|||https://youtu.be/CnHqI6Y3lHc?si=HMRAUcIF0N_LE7X7"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "engenhariadacomputacao",
     "name": "Engenharia da Computação",
     "image": "",
-    "materials": {}
+    "materials": {
+      "matematica": {
+        "matematicadiscretalogicaalgebralinear": {
+          "idMat": "matematicadiscretalogicaalgebralinear",
+          "name": "Matemática discreta, lógica, álgebra linear",
+          "videos": [
+            "João Sarubbi|||https://youtu.be/wFIv9bpjGN0?si=1GQmA5ubhuH6FI8i",
+            "Professor Alê|||https://youtu.be/fD62cRHZ29w?si=BtvUSU5KsBWBzV9U"
+          ],
+          "textos": []
+        }
+      },
+      "fisica": {
+        "hardware": {
+          "idMat": "hardware",
+          "name": "Hardware",
+          "videos": [
+            "Dicionário de Informática|||https://youtu.be/Z5TvnCWPwes?si=3k7_D8AcsS3-qZmf"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "engenhariaeletricaeletronica",
     "name": "Engenharia Elétrica / Eletrônica",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "eletromagnetismo": {
+          "idMat": "eletromagnetismo",
+          "name": "Eletromagnetismo",
+          "videos": [
+            "Engenharia Detalhada|||https://youtu.be/qgDRL1r5Vuo?si=z6jZH5jWbe7sY4uq"
+          ],
+          "textos": []
+        },
+        "ondasesinais": {
+          "idMat": "ondasesinais",
+          "name": "Ondas e Sinais",
+          "videos": [
+            "Ciência Todo Dia|||https://youtu.be/M2D5-zXlD6A?si=bQ1S-awAR5EqBvxK"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "engenhariamecanica",
     "name": "Engenharia Mecânica",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "dinamicaetermodinamica": {
+          "idMat": "dinamicaetermodinamica",
+          "name": "Dinâmica e Termodinâmica",
+          "videos": [
+            "Ciência Todo Dia|||https://youtu.be/U_2AJc1mcas?si=rHm0jwJLwJcQgB1Z"
+          ],
+          "textos": []
+        },
+        "mecanicadosfluidos": {
+          "idMat": "mecanicadosfluidos",
+          "name": "Mecânica dos Fluidos",
+          "videos": [
+            "Engenharia e Cia: Acadêmico|||https://youtu.be/REVLeg--IpA?si=ma83i1uEcpdu_7BS"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "farmacia",
     "name": "Farmácia",
     "image": "",
-    "materials": {}
+    "materials": {
+      "fisica": {
+        "cineticaquimica": {
+          "idMat": "cineticaquimica",
+          "name": "Cinética química",
+          "videos": [
+            "Brasil Escola Oficial|||https://youtu.be/bqIFA-x6FpE?si=cgFgq-f78ahfJBnJ"
+          ],
+          "textos": []
+        },
+        "fisicadedifusao": {
+          "idMat": "fisicadedifusao",
+          "name": "Física de difusão",
+          "videos": [
+            "Explica Professor!|||https://youtu.be/2r-iuy9rBa4?si=w0sICN7XQm-vID2r"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "fisioterapia",
@@ -84,25 +236,15 @@
           "idMat": "analisedeforcas",
           "name": "Análise de forças ",
           "videos": [
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
+            "Fisio em Ortopedia|||https://youtu.be/44aa2gQIahQ?si=n3xcNlKGU0QZEv9Y"
           ],
-          "textos": [
-            "Título|||https://www.example.com/texto-matematica-1",
-            "Título|||https://www.example.com/texto-matematica-2"
-          ]
+          "textos": []
         },
         "dosagemdemedicamentos": {
           "idMat": "dosagemdemedicamentos",
           "name": "Dosagem de medicamentos",
-          "videos": [
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
-          ],
-          "textos": [
-            "https://www.example.com/texto-matematica-1",
-            "https://www.example.com/texto-matematica-2"
-          ]
+          "videos": [],
+          "textos": []
         },
         "geometriaeangulosarticulares": {
           "idMat": "geometriaeangulosarticulares",
@@ -122,14 +264,8 @@
         "mecanica": {
           "idMat": "mecanica",
           "name": "Mecânica",
-          "videos": [
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
-          ],
-          "textos": [
-            "Movimentos|||https://www.example.com/texto-matematica-1",
-            "Força e atrito|||https://www.example.com/texto-matematica-2"
-          ]
+          "videos": [],
+          "textos": []
         },
         "biomecanica": {
           "idMat": "biomecanica",
@@ -142,14 +278,8 @@
         "termoterapiaecrioteram": {
           "idMat": "termoterapiaecrioteram",
           "name": "Termoterapia e crioterapia",
-          "videos": [
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "https://www.youtube.com/watch?v=3JZ_D3ELwOQ"
-          ],
-          "textos": [
-            "https://www.example.com/texto-matematica-1",
-            "https://www.example.com/texto-matematica-2"
-          ]
+          "videos": [],
+          "textos": []
         }
       }
     }
@@ -164,18 +294,79 @@
     "id": "medicinaveterinaria",
     "name": "Medicina Veterinária",
     "image": "",
-    "materials": {}
+    "materials": {
+      "matematica": {},
+      "fisica": {
+        "biomecanicaanimal": {
+          "idMat": "biomecanicaanimal",
+          "name": "Biomecânica animal",
+          "videos": [
+            "FisioVets|||https://youtu.be/-jPIPBx8y94?si=4DwjsaPX1XEp0Tvh"
+          ],
+          "textos": []
+        },
+        "equipamentosmedicosraioxultrassom": {
+          "idMat": "equipamentosmedicosraioxultrassom",
+          "name": "Equipamentos médicos (raio-X, ultrassom)",
+          "videos": [
+            "PremieRpet@|||https://youtu.be/7UNElhyM-xs?si=xxZyF0MzmoTNWLvd"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "nutricao",
     "name": "Nutrição",
     "image": "",
-    "materials": {}
+    "materials": {
+      "matematica": {
+        "estatisticaempesquisas": {
+          "idMat": "estatisticaempesquisas",
+          "name": "Estatística em pesquisas",
+          "videos": [
+            "Estatística Livre|||https://youtu.be/D1APuqGk5dw?si=C28_TMVJcSy_AHnl"
+          ],
+          "textos": []
+        },
+        "calculodecaloriasebalancoenergetico": {
+          "idMat": "calculodecaloriasebalancoenergetico",
+          "name": "Cálculo de calorias e balanço energético",
+          "videos": [
+            "NutriDiversidade|||https://youtu.be/PnDD-cvgYaY?si=PaEAqYEC_oyLAv2R",
+            "AutorNutriDiversidade|||https://youtu.be/S0OaMCrCiYY?si=mkPfqfjw0r8qUXj4"
+          ],
+          "textos": []
+        }
+      }
+    }
   },
   {
     "id": "odontologia",
     "name": "Odontologia",
     "image": "",
-    "materials": {}
+    "materials": {
+      "matematica": {
+        "calculodasforcasdemordidaeequilibriodeaparelhosortodonticos": {
+          "idMat": "calculodasforcasdemordidaeequilibriodeaparelhosortodonticos",
+          "name": "Cálculo das forças de mordida e equilíbrio de aparelhos ortodônticos",
+          "videos": [
+            "Ortondontia Didática|||https://youtu.be/MvgKhiKGBZw?si=2N1xQ3e13n7eqnAr"
+          ],
+          "textos": []
+        }
+      },
+      "fisica": {
+        "fisicadosmateriaisdentarios": {
+          "idMat": "fisicadosmateriaisdentarios",
+          "name": "Física dos materiais dentários",
+          "videos": [
+            "OdontoChannel |||https://youtu.be/GClXv7wPUiE?si=8kVPyIS2OSIJ-c9d"
+          ],
+          "textos": []
+        }
+      }
+    }
   }
 ]

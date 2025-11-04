@@ -373,7 +373,7 @@
     });
     header.querySelector('.btn-add-video').addEventListener('click', () => {
       mat.videos = mat.videos || [];
-      mat.videos.push('Autor ||| https://');
+      mat.videos.push(' ||| ');
       renderLessonEditor(course, areaKey, mat, matKey);
     });
     header.querySelector('.btn-dup').addEventListener('click', () => {
@@ -470,11 +470,11 @@
       vblock.style.marginBottom = '8px';
       vblock.innerHTML = `
         <div class="video-header">
-          <label>Autor: <input class="video-autor" value="${escapeHtml(autor)}"></label>
+          <label>Autor: <input class="video-autor" value="${escapeHtml(autor)}" placeholder="Autor"></label>
           <button class="rm-video">Remover</button>
         </div>
         <div style="margin-top:6px;">
-          <label>URL: <input class="video-url" value="${escapeHtml(url)}" style="width:90%"></label>
+          <label>URL: <input class="video-url" value="${escapeHtml(url)}" style="width:90%" placeholder="https://"></label>
         </div>
       `;
       vblock.querySelector('.rm-video').addEventListener('click', () => {
