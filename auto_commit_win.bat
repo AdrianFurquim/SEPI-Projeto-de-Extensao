@@ -4,7 +4,7 @@ cd /d %~dp0
 
 
 git add -A
-git commit -m "Auto commit: atualizando site de carros"
+git commit -m "Auto commit: Atualizando conteúdos do site"
 IF %ERRORLEVEL% NEQ 0 (
 echo Nao houve alteracoes para commitar ou ocorreu um erro.
 ) ELSE (
