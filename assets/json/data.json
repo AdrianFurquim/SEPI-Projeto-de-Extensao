@@ -21,6 +21,17 @@
           ],
           "textos": []
         }
+      },
+      "matematica": {
+        "proporcaoeestetica": {
+          "idMat": "proporcaoeestetica",
+          "name": "Proporção e Estética",
+          "videos": [
+            "Cairo Okuda|||https://www.youtu.BR/aGDjngeQ8Dw?si=62OIQXQ57og9O_ng",
+            "FELIPE MILWARD|||https://youtu.be/7ZzmNxCzEgk?si=4zca4S68bpajox0U"
+          ],
+          "textos": []
+        }
       }
     }
   },
@@ -94,6 +105,25 @@
           ],
           "textos": []
         }
+      },
+      "matematica": {
+        "matematicaelogica": {
+          "idMat": "matematicaelogica",
+          "name": "Matemática e Lógica",
+          "videos": [
+            "Gran Cursos Saúde|||https://www.youtu.be/vy34ezWCI7E?si=knI15iKfuZ0rUgU0",
+            " ||| "
+          ],
+          "textos": []
+        },
+        "calculodemedicamentos": {
+          "idMat": "calculodemedicamentos",
+          "name": "Cálculo de Medicamentos",
+          "videos": [
+            "Professor Emerson Marques|||https://youtu.be/NE17w5oSyqc?si=snkljXiRU1-BcDk7"
+          ],
+          "textos": []
+        }
       }
     }
   },
@@ -117,6 +147,16 @@
           "videos": [
             "PS Videoaulas ENGENHARIA|||https://youtu.be/luwM-3utFi4?si=Tus55IRDuYg0DDuA",
             "PS Videoaulas ENGENHARIA|||https://youtu.be/CnHqI6Y3lHc?si=HMRAUcIF0N_LE7X7"
+          ],
+          "textos": []
+        }
+      },
+      "matematica": {
+        "analiseestrutural": {
+          "idMat": "analiseestrutural",
+          "name": "Análise Estrutural",
+          "videos": [
+            "Engenharia com Ana Pierri|||https://youtu.be/mKzf_QvjhjE?si=bveb945WXtcfVCKB"
           ],
           "textos": []
         }
@@ -173,6 +213,16 @@
           ],
           "textos": []
         }
+      },
+      "matematica": {
+        "algebralinear": {
+          "idMat": "algebralinear",
+          "name": "Álgebra Linear",
+          "videos": [
+            "Editor da Edinéia|||https://youtu.be/lUTt0PycLMw?si=4RsroG5xc4prkdRc"
+          ],
+          "textos": []
+        }
       }
     }
   },
@@ -195,6 +245,16 @@
           "name": "Mecânica dos Fluidos",
           "videos": [
             "Engenharia e Cia: Acadêmico|||https://youtu.be/REVLeg--IpA?si=ma83i1uEcpdu_7BS"
+          ],
+          "textos": []
+        }
+      },
+      "matematica": {
+        "analiseestrutural": {
+          "idMat": "analiseestrutural",
+          "name": "Análise Estrutural",
+          "videos": [
+            "Prof. Pablo Altoé Amorim|||https://youtu.be/Gl0ipGR6TmI?si=pdGHcQVGeT2BFZTz"
           ],
           "textos": []
         }
@@ -223,6 +283,16 @@
           ],
           "textos": []
         }
+      },
+      "matematica": {
+        "calculodedoses": {
+          "idMat": "calculodedoses",
+          "name": "Cálculo de Doses",
+          "videos": [
+            "Farmacologia Fácil|||https://youtu.be/1cTgCas8xCY?si=CGgOyOqdIPq3fybP"
+          ],
+          "textos": []
+        }
       }
     }
   },
@@ -240,12 +310,6 @@
           ],
           "textos": []
         },
-        "dosagemdemedicamentos": {
-          "idMat": "dosagemdemedicamentos",
-          "name": "Dosagem de medicamentos",
-          "videos": [],
-          "textos": []
-        },
         "geometriaeangulosarticulares": {
           "idMat": "geometriaeangulosarticulares",
           "name": "Geometria e ângulos articulares",
@@ -254,19 +318,10 @@
             "José Góes|||https://youtu.be/1qgS0jE-0g4?si=yfY99qhYUQgC8cKW",
             "Anatomia e etc. com Natalia Reinecke|||https://youtu.be/ngrsBhZaLZ4?si=g8al3TbW3AWfkobt"
           ],
-          "textos": [
-            "Título1|||A Fotogrametria digital, segundo Atkinson (1996), Patias (2002) e Mitchel e Newton (2002), tem sido bem recebida na área médica.\n\nNesses últimos anos, a tecnologia digital tornou-se popular no Brasil.\nA fotografia digital, com excelência na qualidade das fotos e custo acessível, mostrou-se um instrumento em potencial para a avaliação fisioterapêutica.\n\nNeste estudo, em especial, para medir amplitudes de movimento do corpo humano.\nO interesse da metodologia aqui desenvolvida para medir angulações no corpo humano surgiu da dificuldade da utilização do goniômetro convencional em determinadas articulações.\n\nO estudo desse método é interessante, na medida em que proporciona feedback visual ao paciente, evidenciando a evolução do tratamento.\nA escolha deste método ocorreu no trabalho de Denise Ricieri, encontrado em http://www.inspirar.com.br/img_insp/359,20,Identificação de Padrões Respiratórios através da Fotogrametria Computadorizada.\n\nNo modelo mecânico do corpo humano, segundo Konno e Mead (1967), possui-se um duplo compartimento para a parede torácica (CHEST WALL) e Tórax + Abdome.\nPara Ward et al. (1992), esta divisão é dada pelo duplo compartimento torácico e Tórax Superior + Tórax Inferior.\n\nÉ a partir destas subdivisões que será desenvolvida a medição mostrada neste trabalho.\nPara o desenvolvimento da rotina que mede os ângulos, utilizou-se o produto escalar entre os vetores gerados a partir dos três pontos (Boulos e Camargo, 1987).\n\nGonzáles e Woods (2004) mostram uma excelente abordagem sobre processamento de imagens e MATLAB.\nEste trabalho baseou-se em algumas rotinas lá mostradas.",
-            "Título|||Texto antes. [[[/assets/img/geometriaangularjoelho.jpg~~~Autor Fulano / Site X]]] Texto depois. Agora vamos inserir mais uma imagem: [[[/assets/img/geometriaangularjoelho.jpg~~~Autor Fulano / Site X]]] Agora temos mais um texto para fins de teste."
-          ]
+          "textos": []
         }
       },
       "fisica": {
-        "mecanica": {
-          "idMat": "mecanica",
-          "name": "Mecânica",
-          "videos": [],
-          "textos": []
-        },
         "biomecanica": {
           "idMat": "biomecanica",
           "name": "Biomecânica",
@@ -274,28 +329,25 @@
             "Além da Cinesioterapia|||https://youtu.be/i0RGDIcDndg?si=sGSUyVIPoMB6GEys"
           ],
           "textos": []
-        },
-        "termoterapiaecrioteram": {
-          "idMat": "termoterapiaecrioteram",
-          "name": "Termoterapia e crioterapia",
-          "videos": [],
-          "textos": []
         }
       }
     }
-  },
-  {
-    "id": "fonoauiologia",
-    "name": "Fonoauiologia",
-    "image": "",
-    "materials": {}
   },
   {
     "id": "medicinaveterinaria",
     "name": "Medicina Veterinária",
     "image": "",
     "materials": {
-      "matematica": {},
+      "matematica": {
+        "calculodedosesnaveterinaria": {
+          "idMat": "calculodedosesnaveterinaria",
+          "name": "Cálculo de Doses na Veterinária",
+          "videos": [
+            "Vet Descomplica|||https://youtu.be/fyci9HxQ8Ms?si=DBixu1GtwjmXfUWT"
+          ],
+          "textos": []
+        }
+      },
       "fisica": {
         "biomecanicaanimal": {
           "idMat": "biomecanicaanimal",
@@ -336,6 +388,16 @@
           "videos": [
             "NutriDiversidade|||https://youtu.be/PnDD-cvgYaY?si=PaEAqYEC_oyLAv2R",
             "AutorNutriDiversidade|||https://youtu.be/S0OaMCrCiYY?si=mkPfqfjw0r8qUXj4"
+          ],
+          "textos": []
+        }
+      },
+      "fisica": {
+        "propriedadesfisicasdosalimentos": {
+          "idMat": "propriedadesfisicasdosalimentos",
+          "name": "Propriedades Físicas dos Alimentos",
+          "videos": [
+            "Cafet-RJ campus Valença|||https://youtu.be/blcSjndMsRA?si=HpnBpI02H3_3KzvK"
           ],
           "textos": []
         }
