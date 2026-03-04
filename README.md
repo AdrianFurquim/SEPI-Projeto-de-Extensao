@@ -1,7 +1,14 @@
-# SEPI-Projeto-de-Extensão
+# 📚 Semeando Educação Para Inovação
 
-🧩 Sobre o Projeto
-Este repositório contém o desenvolvimento colaborativo de um site para o projeto de extensão SEPI (Sistema de Extensão e Projetos Integradores).
+## 🎯 Objetivo
+Plataforma EAD voltada para auxiliar alunos do ensino médio.
 
-❕ Clone o repositório:
-- git clone https://github.com/AdrianFurquim/SEPI-Projeto-de-Extensao.git
+## 🛠 Tecnologias Utilizadas
+- HTML
+- CSS
+- JavaScript
+
+## 💡 Funcionalidades
+- Conteúdos organizados por tema
+- Área administrativa
+- Material complementar
